@@ -16,5 +16,12 @@ namespace CouncilGamingClub
         {
             InitializeComponent();
         }
+
+        private void SHomeButton_Click(object sender, EventArgs e)
+        {
+            MainPage MainForm = new MainPage();
+            MainForm.Show();
+            this.Hide();
+        }
     }
 }

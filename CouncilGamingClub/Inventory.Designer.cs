@@ -120,6 +120,7 @@
             this.IHomeButton.TabIndex = 31;
             this.IHomeButton.Text = "Home";
             this.IHomeButton.UseVisualStyleBackColor = false;
+            this.IHomeButton.Click += new System.EventHandler(this.IHomeButton_Click);
             // 
             // IEditButton
             // 

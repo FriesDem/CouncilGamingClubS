@@ -120,6 +120,7 @@
             this.OHomeButton.TabIndex = 20;
             this.OHomeButton.Text = "Home";
             this.OHomeButton.UseVisualStyleBackColor = false;
+            this.OHomeButton.Click += new System.EventHandler(this.OHomeButton_Click);
             // 
             // OEditButton
             // 

@@ -81,6 +81,7 @@
             this.CustomerInfoButton.TabIndex = 9;
             this.CustomerInfoButton.Text = "Customer Information";
             this.CustomerInfoButton.UseVisualStyleBackColor = true;
+            this.CustomerInfoButton.Click += new System.EventHandler(this.CustomerInfoButton_Click);
             // 
             // SuppliersButton
             // 
@@ -90,6 +91,7 @@
             this.SuppliersButton.TabIndex = 8;
             this.SuppliersButton.Text = "Suppliers";
             this.SuppliersButton.UseVisualStyleBackColor = true;
+            this.SuppliersButton.Click += new System.EventHandler(this.SuppliersButton_Click);
             // 
             // InventoryButton
             // 
@@ -99,6 +101,7 @@
             this.InventoryButton.TabIndex = 7;
             this.InventoryButton.Text = "Inventory";
             this.InventoryButton.UseVisualStyleBackColor = true;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // OrdersButton
             // 
@@ -108,8 +111,9 @@
             this.OrdersButton.TabIndex = 6;
             this.OrdersButton.Text = "Orders";
             this.OrdersButton.UseVisualStyleBackColor = true;
+            this.OrdersButton.Click += new System.EventHandler(this.OrdersButton_Click);
             // 
-            // Form1
+            // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +125,7 @@
             this.Controls.Add(this.InventoryButton);
             this.Controls.Add(this.OrdersButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MainPage";
             this.Text = "Form1";
             this.Employeeinfodisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CGCLogo)).EndInit();

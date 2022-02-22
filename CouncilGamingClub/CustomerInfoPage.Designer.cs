@@ -120,6 +120,7 @@
             this.CHomeButton.TabIndex = 42;
             this.CHomeButton.Text = "Home";
             this.CHomeButton.UseVisualStyleBackColor = false;
+            this.CHomeButton.Click += new System.EventHandler(this.CHomeButton_Click);
             // 
             // CEditButton
             // 
