@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +55,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CGCTABLE.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CGCTABLE.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGCTABLE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CGCTABLE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGCTABLE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfo.cs">
+      <DependentUpon>CGCTABLE.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomerInfoPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerInfoPage.Designer.cs">
       <DependentUpon>CustomerInfoPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory_Table.cs">
+      <DependentUpon>CGCTABLE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Page.cs">
+      <DependentUpon>CGCTABLE.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>CGCTABLE.tt</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
@@ -111,6 +157,21 @@
     <EmbeddedResource Include="SuppliersForm.resx">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="CGCTABLE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CGCTABLE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CGCTABLE.edmx.diagram">
+      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +184,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CGCTABLE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+      <LastGenOutput>CGCTABLE.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CGCTABLE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+      <LastGenOutput>CGCTABLE.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

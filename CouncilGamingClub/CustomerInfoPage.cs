@@ -12,9 +12,13 @@ namespace CouncilGamingClub
 {
     public partial class CustomerInfoPage : Form
     {
+        private readonly CGCAppDatabaseEntities cgcDB;
+
+       
         public CustomerInfoPage()
         {
             InitializeComponent();
+            cgcDB = new CGCAppDatabaseEntities();
         }
 
         private void CHomeButton_Click(object sender, EventArgs e)
@@ -22,6 +26,20 @@ namespace CouncilGamingClub
             MainPage MainForm = new MainPage();
             MainForm.Show();
             this.Hide();
+        }
+
+        private void CAddButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string custName = txtCustAdd.Text;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
