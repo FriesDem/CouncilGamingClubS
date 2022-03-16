@@ -12,37 +12,59 @@ namespace CouncilGamingClub
 {
     public partial class MainPage : Form
     {
+        private LoginPage _login;
+        
         public MainPage()
         {
             InitializeComponent();
         }
-
+        public MainPage(LoginPage login)
+        {
+            InitializeComponent();
+            _login = login;
+        }
         private void OrdersButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             Orders OrdersForm = new Orders();
             OrdersForm.Show();
-            this.Hide();
+            
         }
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             Inventory InventoryForm = new Inventory();
             InventoryForm.Show();
-            this.Hide();
+            
         }
 
         private void CustomerInfoButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             CustomerInfoPage CustomerForm = new CustomerInfoPage();
             CustomerForm.Show();
-            this.Hide();
+           
         }
 
         private void SuppliersButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             SuppliersForm SuppliesForm = new SuppliersForm();
             SuppliesForm.Show();
-            this.Hide();
+            
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginPage login = new LoginPage();
+            login.Show();
+        }
+
+        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _login.Close();
         }
     }
 }

@@ -47,41 +47,42 @@
             this.Employeeinfodisplay.Controls.Add(this.CGCLogo);
             this.Employeeinfodisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.Employeeinfodisplay.Location = new System.Drawing.Point(0, 0);
-            this.Employeeinfodisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employeeinfodisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Employeeinfodisplay.Name = "Employeeinfodisplay";
-            this.Employeeinfodisplay.Size = new System.Drawing.Size(790, 118);
+            this.Employeeinfodisplay.Size = new System.Drawing.Size(1053, 145);
             this.Employeeinfodisplay.TabIndex = 5;
             // 
             // LogoutButton
             // 
             this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LogoutButton.ForeColor = System.Drawing.Color.Gold;
-            this.LogoutButton.Location = new System.Drawing.Point(104, 80);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LogoutButton.Location = new System.Drawing.Point(40, 97);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(58, 20);
+            this.LogoutButton.Size = new System.Drawing.Size(77, 25);
             this.LogoutButton.TabIndex = 5;
             this.LogoutButton.Text = "Logout";
             this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // CGCLogo
             // 
             this.CGCLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CGCLogo.BackgroundImage")));
             this.CGCLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CGCLogo.Image = ((System.Drawing.Image)(resources.GetObject("CGCLogo.Image")));
-            this.CGCLogo.Location = new System.Drawing.Point(654, 27);
-            this.CGCLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CGCLogo.Location = new System.Drawing.Point(872, 33);
+            this.CGCLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CGCLogo.Name = "CGCLogo";
-            this.CGCLogo.Size = new System.Drawing.Size(75, 72);
+            this.CGCLogo.Size = new System.Drawing.Size(100, 89);
             this.CGCLogo.TabIndex = 0;
             this.CGCLogo.TabStop = false;
             // 
             // CustomerInfoButton
             // 
-            this.CustomerInfoButton.Location = new System.Drawing.Point(83, 351);
-            this.CustomerInfoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CustomerInfoButton.Location = new System.Drawing.Point(111, 432);
+            this.CustomerInfoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerInfoButton.Name = "CustomerInfoButton";
-            this.CustomerInfoButton.Size = new System.Drawing.Size(79, 61);
+            this.CustomerInfoButton.Size = new System.Drawing.Size(105, 75);
             this.CustomerInfoButton.TabIndex = 9;
             this.CustomerInfoButton.Text = "Customer Information";
             this.CustomerInfoButton.UseVisualStyleBackColor = true;
@@ -89,10 +90,10 @@
             // 
             // SuppliersButton
             // 
-            this.SuppliersButton.Location = new System.Drawing.Point(449, 351);
-            this.SuppliersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SuppliersButton.Location = new System.Drawing.Point(599, 432);
+            this.SuppliersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SuppliersButton.Name = "SuppliersButton";
-            this.SuppliersButton.Size = new System.Drawing.Size(73, 61);
+            this.SuppliersButton.Size = new System.Drawing.Size(97, 75);
             this.SuppliersButton.TabIndex = 8;
             this.SuppliersButton.Text = "Suppliers";
             this.SuppliersButton.UseVisualStyleBackColor = true;
@@ -100,10 +101,10 @@
             // 
             // InventoryButton
             // 
-            this.InventoryButton.Location = new System.Drawing.Point(449, 204);
-            this.InventoryButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InventoryButton.Location = new System.Drawing.Point(599, 251);
+            this.InventoryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(73, 61);
+            this.InventoryButton.Size = new System.Drawing.Size(97, 75);
             this.InventoryButton.TabIndex = 7;
             this.InventoryButton.Text = "Inventory";
             this.InventoryButton.UseVisualStyleBackColor = true;
@@ -111,10 +112,10 @@
             // 
             // OrdersButton
             // 
-            this.OrdersButton.Location = new System.Drawing.Point(83, 204);
-            this.OrdersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrdersButton.Location = new System.Drawing.Point(111, 251);
+            this.OrdersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrdersButton.Name = "OrdersButton";
-            this.OrdersButton.Size = new System.Drawing.Size(79, 61);
+            this.OrdersButton.Size = new System.Drawing.Size(105, 75);
             this.OrdersButton.TabIndex = 6;
             this.OrdersButton.Text = "Orders";
             this.OrdersButton.UseVisualStyleBackColor = true;
@@ -122,19 +123,20 @@
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(790, 524);
+            this.ClientSize = new System.Drawing.Size(1053, 645);
             this.Controls.Add(this.Employeeinfodisplay);
             this.Controls.Add(this.CustomerInfoButton);
             this.Controls.Add(this.SuppliersButton);
             this.Controls.Add(this.InventoryButton);
             this.Controls.Add(this.OrdersButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainPage";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             this.Employeeinfodisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CGCLogo)).EndInit();
             this.ResumeLayout(false);

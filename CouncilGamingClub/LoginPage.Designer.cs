@@ -32,9 +32,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,34 +64,35 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(563, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 29);
+            this.label1.Size = new System.Drawing.Size(132, 29);
             this.label1.TabIndex = 9;
-            this.label1.Text = "CGC ID";
+            this.label1.Text = "Username";
             // 
-            // textBox2
+            // tbPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(418, 203);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(394, 22);
-            this.textBox2.TabIndex = 8;
+            this.tbPassword.Location = new System.Drawing.Point(418, 203);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(394, 22);
+            this.tbPassword.TabIndex = 8;
             // 
-            // textBox1
+            // tbUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(418, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(394, 22);
-            this.textBox1.TabIndex = 7;
+            this.tbUsername.Location = new System.Drawing.Point(418, 127);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(394, 22);
+            this.tbUsername.TabIndex = 7;
             // 
-            // button1
+            // Login
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(543, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 48);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Login.BackColor = System.Drawing.Color.Red;
+            this.Login.Location = new System.Drawing.Point(543, 278);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(148, 48);
+            this.Login.TabIndex = 6;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // LoginPage
             // 
@@ -102,9 +103,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginPage";
             this.Text = "LoginPage";
@@ -119,8 +120,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Button Login;
     }
 }

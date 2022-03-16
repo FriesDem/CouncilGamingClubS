@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CCGAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CCGAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CustomerInfo">
           <Key>
             <PropertyRef Name="ID" />
@@ -22,13 +22,15 @@
           <Property Name="Type Of Item" Type="nchar" MaxLength="20" />
           <Property Name="Amount" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Login Page">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Username" Type="nchar" MaxLength="20" />
-          <Property Name="Password" Type="nchar" MaxLength="25" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -56,15 +58,20 @@
         <EntityContainer Name="CCGAppDatabaseModelStoreContainer">
           <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventory Table" EntityType="Self.Inventory Table" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Login Page" EntityType="Self.Login Page" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login Page" EntityType="Self.Login Page" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Login Page].[ID] AS [ID], 
+    [Login Page].[Username] AS [Username], 
+    [Login Page].[Password] AS [Password]
+    FROM [dbo].[Login Page] AS [Login Page]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
             <End Role="CustomerInfo" EntitySet="CustomerInfo" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CGCAppDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -91,8 +98,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
