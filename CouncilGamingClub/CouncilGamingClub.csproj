@@ -105,6 +105,18 @@
     <Compile Include="CustomerInfoPage.Designer.cs">
       <DependentUpon>CustomerInfoPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomerInfo.Designer.cs">
+      <DependentUpon>EditCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Existing Customer Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Existing Customer Data.Designer.cs">
+      <DependentUpon>Existing Customer Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory_Table.cs">
       <DependentUpon>CGCTABLE.tt</DependentUpon>
     </Compile>
@@ -121,11 +133,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>CGCTABLE.tt</DependentUpon>
@@ -159,6 +166,12 @@
     <EmbeddedResource Include="CustomerInfoPage.resx">
       <DependentUpon>CustomerInfoPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomerInfo.resx">
+      <DependentUpon>EditCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Existing Customer Data.resx">
+      <DependentUpon>Existing Customer Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,23 +192,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SuppliersForm.resx">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="CGCTABLE.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CGCTABLE.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="CGCTABLE.edmx.diagram">
       <DependentUpon>CGCTABLE.edmx</DependentUpon>
-    </None>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -226,6 +233,18 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\info-icon%28edit%291.png" />
+    <None Include="Resources\user-icon%28esit%29.png" />
+    <None Include="Resources\info-icon%28edit%29.png" />
+    <None Include="Resources\order-icon%28edit%29.png" />
+    <None Include="Resources\Ship.png" />
+    <None Include="Resources\ship-icon1.png" />
+    <None Include="Resources\ship-icon.png" />
+    <None Include="Resources\CGCLogo.BackgroundImage.png" />
+    <None Include="Resources\User.ico" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\User.bmp" />
+    <None Include="Resources\order-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

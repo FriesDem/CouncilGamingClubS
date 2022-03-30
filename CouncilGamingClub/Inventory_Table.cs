@@ -14,7 +14,8 @@ namespace CouncilGamingClub
     
     public partial class Inventory_Table
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
+        public string ItemID { get; set; }
         public string ItemName { get; set; }
         public string Type_Of_Item { get; set; }
         public Nullable<int> Amount { get; set; }

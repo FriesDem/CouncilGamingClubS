@@ -23,37 +23,7 @@ namespace CouncilGamingClub
             InitializeComponent();
             _login = login;
         }
-        private void OrdersButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Orders OrdersForm = new Orders();
-            OrdersForm.Show();
-            
-        }
-
-        private void InventoryButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Inventory InventoryForm = new Inventory();
-            InventoryForm.Show();
-            
-        }
-
-        private void CustomerInfoButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            CustomerInfoPage CustomerForm = new CustomerInfoPage();
-            CustomerForm.Show();
-           
-        }
-
-        private void SuppliersButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            SuppliersForm SuppliesForm = new SuppliersForm();
-            SuppliesForm.Show();
-            
-        }
+        
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
@@ -62,9 +32,37 @@ namespace CouncilGamingClub
             login.Show();
         }
 
-        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        //private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    _login.Close();
+        //}
+                
+        private void OrdersButton_Click(object sender, EventArgs e)
         {
-            _login.Close();
+            this.Close();
+            Orders OrdersForm = new Orders();
+            OrdersForm.Show();
+        }
+
+        private void InventoryButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Inventory InventoryForm = new Inventory();
+            InventoryForm.Show();
+        }
+
+        private void CustomerInfoButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CustomerInfoPage CustomerForm = new CustomerInfoPage();
+            CustomerForm.Show();
+        }
+
+        private void SuppliersButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SuppliersForm SuppliesForm = new SuppliersForm();
+            SuppliesForm.Show();
         }
     }
 }

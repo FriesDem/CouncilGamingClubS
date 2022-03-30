@@ -21,8 +21,10 @@ namespace CouncilGamingClub
         }
     
         public int ID { get; set; }
+        public string UniqueID { get; set; }
         public string CustomerFname { get; set; }
         public string CustomerLname { get; set; }
+        public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

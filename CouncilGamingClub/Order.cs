@@ -14,8 +14,7 @@ namespace CouncilGamingClub
     
     public partial class Order
     {
-        public string ID { get; set; }
-        public string CustomerID { get; set; }
+        public int ID { get; set; }
         public string Product_Name { get; set; }
         public Nullable<int> Amount { get; set; }
         public Nullable<decimal> TotalCost { get; set; }

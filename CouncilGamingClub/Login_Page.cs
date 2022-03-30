@@ -14,7 +14,7 @@ namespace CouncilGamingClub
     
     public partial class Login_Page
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
     }

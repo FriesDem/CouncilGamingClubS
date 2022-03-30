@@ -10,25 +10,26 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniqueID" Type="nchar" MaxLength="10" />
           <Property Name="CustomerFname" Type="nchar" MaxLength="20" />
           <Property Name="CustomerLname" Type="nchar" MaxLength="20" />
+          <Property Name="Address" Type="text" />
         </EntityType>
         <EntityType Name="Inventory Table">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemID" Type="nchar" MaxLength="10" />
           <Property Name="ItemName" Type="nchar" MaxLength="15" />
           <Property Name="Type Of Item" Type="nchar" MaxLength="20" />
           <Property Name="Amount" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Login Page">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -36,12 +37,11 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="CustomerID" Type="nchar" MaxLength="10" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Product Name" Type="nchar" MaxLength="30" />
           <Property Name="Amount" Type="int" />
           <Property Name="TotalCost" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Cust_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cust_ID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Orders_CustomerInfo">
           <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
@@ -58,14 +58,8 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
         <EntityContainer Name="CCGAppDatabaseModelStoreContainer">
           <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventory Table" EntityType="Self.Inventory Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login Page" EntityType="Self.Login Page" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Login Page" EntityType="Self.Login Page" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Login Page].[ID] AS [ID], 
-    [Login Page].[Username] AS [Username], 
-    [Login Page].[Password] AS [Password]
-    FROM [dbo].[Login Page] AS [Login Page]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
             <End Role="CustomerInfo" EntitySet="CustomerInfo" />
             <End Role="Orders" EntitySet="Orders" />
@@ -75,20 +69,33 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CGCAppDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CGCAppDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomerInfoes" EntityType="CGCAppDatabaseModel.CustomerInfo" />
+          <EntitySet Name="Inventory_Tables" EntityType="CGCAppDatabaseModel.Inventory_Table" />
+          <EntitySet Name="Login_Pages" EntityType="CGCAppDatabaseModel.Login_Page" />
+          <EntitySet Name="Orders" EntityType="CGCAppDatabaseModel.Order" />
+          <AssociationSet Name="FK_Orders_CustomerInfo" Association="CGCAppDatabaseModel.FK_Orders_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="CustomerInfo">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="CustomerFname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="CustomerLname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_CustomerInfo" FromRole="CustomerInfo" ToRole="Orders" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="CGCAppDatabaseModel.FK_Orders_CustomerInfo" FromRole="CustomerInfo" ToRole="Order" />
         </EntityType>
         <EntityType Name="Inventory_Table">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="ItemName" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="Type_Of_Item" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
@@ -97,7 +104,7 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -105,36 +112,25 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Product_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Cust_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_Orders_CustomerInfo" FromRole="Orders" ToRole="CustomerInfo" />
+          <Property Name="Cust_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerInfo" Relationship="CGCAppDatabaseModel.FK_Orders_CustomerInfo" FromRole="Order" ToRole="CustomerInfo" />
         </EntityType>
         <Association Name="FK_Orders_CustomerInfo">
-          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
-          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <End Type="CGCAppDatabaseModel.CustomerInfo" Role="CustomerInfo" Multiplicity="1" />
+          <End Type="CGCAppDatabaseModel.Order" Role="Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CustomerInfo">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Orders">
+            <Dependent Role="Order">
               <PropertyRef Name="Cust_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CGCAppDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
-          <EntitySet Name="Inventory_Tables" EntityType="Self.Inventory_Table" />
-          <EntitySet Name="Login_Pages" EntityType="Self.Login_Page" />
-          <EntitySet Name="Orders" EntityType="Self.Order" />
-          <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
-            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -144,40 +140,42 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.Login Page' does not have a pri
           <EntitySetMapping Name="CustomerInfoes">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.CustomerInfo">
               <MappingFragment StoreEntitySet="CustomerInfo">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CustomerFname" ColumnName="CustomerFname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CustomerLname" ColumnName="CustomerLname" />
+                <ScalarProperty Name="CustomerFname" ColumnName="CustomerFname" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Inventory_Tables">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.Inventory_Table">
               <MappingFragment StoreEntitySet="Inventory Table">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="Type_Of_Item" ColumnName="Type Of Item" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type_Of_Item" ColumnName="Type Of Item" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Login_Pages">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.Login_Page">
               <MappingFragment StoreEntitySet="Login Page">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.Order">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
                 <ScalarProperty Name="Cust_ID" ColumnName="Cust_ID" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

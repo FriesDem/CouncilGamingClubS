@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.Employeeinfodisplay = new System.Windows.Forms.Panel();
             this.LogoutButton = new System.Windows.Forms.Button();
-            this.CGCLogo = new System.Windows.Forms.PictureBox();
-            this.CustomerInfoButton = new System.Windows.Forms.Button();
-            this.SuppliersButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
+            this.CustomerInfoButton = new System.Windows.Forms.Button();
             this.OrdersButton = new System.Windows.Forms.Button();
+            this.CGCLogo = new System.Windows.Forms.PictureBox();
+            this.SuppliersButton = new System.Windows.Forms.Button();
             this.Employeeinfodisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CGCLogo)).BeginInit();
             this.SuspendLayout();
@@ -45,98 +47,137 @@
             this.Employeeinfodisplay.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Employeeinfodisplay.Controls.Add(this.LogoutButton);
             this.Employeeinfodisplay.Controls.Add(this.CGCLogo);
-            this.Employeeinfodisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.Employeeinfodisplay.Location = new System.Drawing.Point(0, 0);
-            this.Employeeinfodisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Employeeinfodisplay.Margin = new System.Windows.Forms.Padding(2);
             this.Employeeinfodisplay.Name = "Employeeinfodisplay";
-            this.Employeeinfodisplay.Size = new System.Drawing.Size(1053, 145);
+            this.Employeeinfodisplay.Size = new System.Drawing.Size(790, 118);
             this.Employeeinfodisplay.TabIndex = 5;
             // 
             // LogoutButton
             // 
             this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LogoutButton.ForeColor = System.Drawing.Color.Gold;
-            this.LogoutButton.Location = new System.Drawing.Point(40, 97);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LogoutButton.Location = new System.Drawing.Point(30, 79);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(2);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(77, 25);
+            this.LogoutButton.Size = new System.Drawing.Size(58, 20);
             this.LogoutButton.TabIndex = 5;
             this.LogoutButton.Text = "Logout";
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(114, 207);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(449, 207);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // InventoryButton
+            // 
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventoryButton.Image = global::CouncilGamingClub.Properties.Resources.info_icon_edit_1;
+            this.InventoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.InventoryButton.Location = new System.Drawing.Point(449, 207);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(136, 45);
+            this.InventoryButton.TabIndex = 9;
+            this.InventoryButton.Text = "Inventory";
+            this.InventoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InventoryButton.UseVisualStyleBackColor = true;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
+            // 
+            // CustomerInfoButton
+            // 
+            this.CustomerInfoButton.FlatAppearance.BorderSize = 0;
+            this.CustomerInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CustomerInfoButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerInfoButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CustomerInfoButton.Image = global::CouncilGamingClub.Properties.Resources.user_icon_esit_;
+            this.CustomerInfoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CustomerInfoButton.Location = new System.Drawing.Point(114, 351);
+            this.CustomerInfoButton.Name = "CustomerInfoButton";
+            this.CustomerInfoButton.Size = new System.Drawing.Size(160, 61);
+            this.CustomerInfoButton.TabIndex = 9;
+            this.CustomerInfoButton.Text = "Customer Info";
+            this.CustomerInfoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CustomerInfoButton.UseVisualStyleBackColor = true;
+            this.CustomerInfoButton.Click += new System.EventHandler(this.CustomerInfoButton_Click);
+            // 
+            // OrdersButton
+            // 
+            this.OrdersButton.FlatAppearance.BorderSize = 0;
+            this.OrdersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrdersButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrdersButton.Image = global::CouncilGamingClub.Properties.Resources.order_icon_edit_;
+            this.OrdersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrdersButton.Location = new System.Drawing.Point(114, 207);
+            this.OrdersButton.Name = "OrdersButton";
+            this.OrdersButton.Size = new System.Drawing.Size(118, 45);
+            this.OrdersButton.TabIndex = 9;
+            this.OrdersButton.Text = "Orders";
+            this.OrdersButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OrdersButton.UseVisualStyleBackColor = true;
+            this.OrdersButton.Click += new System.EventHandler(this.OrdersButton_Click);
             // 
             // CGCLogo
             // 
             this.CGCLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CGCLogo.BackgroundImage")));
             this.CGCLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CGCLogo.Image = ((System.Drawing.Image)(resources.GetObject("CGCLogo.Image")));
-            this.CGCLogo.Location = new System.Drawing.Point(872, 33);
-            this.CGCLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CGCLogo.Location = new System.Drawing.Point(654, 27);
+            this.CGCLogo.Margin = new System.Windows.Forms.Padding(2);
             this.CGCLogo.Name = "CGCLogo";
-            this.CGCLogo.Size = new System.Drawing.Size(100, 89);
+            this.CGCLogo.Size = new System.Drawing.Size(75, 72);
             this.CGCLogo.TabIndex = 0;
             this.CGCLogo.TabStop = false;
             // 
-            // CustomerInfoButton
-            // 
-            this.CustomerInfoButton.Location = new System.Drawing.Point(111, 432);
-            this.CustomerInfoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerInfoButton.Name = "CustomerInfoButton";
-            this.CustomerInfoButton.Size = new System.Drawing.Size(105, 75);
-            this.CustomerInfoButton.TabIndex = 9;
-            this.CustomerInfoButton.Text = "Customer Information";
-            this.CustomerInfoButton.UseVisualStyleBackColor = true;
-            this.CustomerInfoButton.Click += new System.EventHandler(this.CustomerInfoButton_Click);
-            // 
             // SuppliersButton
             // 
-            this.SuppliersButton.Location = new System.Drawing.Point(599, 432);
-            this.SuppliersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SuppliersButton.FlatAppearance.BorderSize = 0;
+            this.SuppliersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SuppliersButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuppliersButton.Image = ((System.Drawing.Image)(resources.GetObject("SuppliersButton.Image")));
+            this.SuppliersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SuppliersButton.Location = new System.Drawing.Point(449, 351);
+            this.SuppliersButton.Margin = new System.Windows.Forms.Padding(2);
             this.SuppliersButton.Name = "SuppliersButton";
-            this.SuppliersButton.Size = new System.Drawing.Size(97, 75);
+            this.SuppliersButton.Size = new System.Drawing.Size(136, 61);
             this.SuppliersButton.TabIndex = 8;
             this.SuppliersButton.Text = "Suppliers";
+            this.SuppliersButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SuppliersButton.UseVisualStyleBackColor = true;
             this.SuppliersButton.Click += new System.EventHandler(this.SuppliersButton_Click);
             // 
-            // InventoryButton
-            // 
-            this.InventoryButton.Location = new System.Drawing.Point(599, 251);
-            this.InventoryButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(97, 75);
-            this.InventoryButton.TabIndex = 7;
-            this.InventoryButton.Text = "Inventory";
-            this.InventoryButton.UseVisualStyleBackColor = true;
-            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
-            // 
-            // OrdersButton
-            // 
-            this.OrdersButton.Location = new System.Drawing.Point(111, 251);
-            this.OrdersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.OrdersButton.Name = "OrdersButton";
-            this.OrdersButton.Size = new System.Drawing.Size(105, 75);
-            this.OrdersButton.TabIndex = 6;
-            this.OrdersButton.Text = "Orders";
-            this.OrdersButton.UseVisualStyleBackColor = true;
-            this.OrdersButton.Click += new System.EventHandler(this.OrdersButton_Click);
-            // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1053, 645);
-            this.Controls.Add(this.Employeeinfodisplay);
-            this.Controls.Add(this.CustomerInfoButton);
-            this.Controls.Add(this.SuppliersButton);
+            this.ClientSize = new System.Drawing.Size(790, 524);
             this.Controls.Add(this.InventoryButton);
+            this.Controls.Add(this.CustomerInfoButton);
             this.Controls.Add(this.OrdersButton);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Employeeinfodisplay);
+            this.Controls.Add(this.SuppliersButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainPage";
-            this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             this.Employeeinfodisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CGCLogo)).EndInit();
             this.ResumeLayout(false);
@@ -148,10 +189,12 @@
         private System.Windows.Forms.Panel Employeeinfodisplay;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.PictureBox CGCLogo;
-        private System.Windows.Forms.Button CustomerInfoButton;
         private System.Windows.Forms.Button SuppliersButton;
-        private System.Windows.Forms.Button InventoryButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button OrdersButton;
+        private System.Windows.Forms.Button InventoryButton;
+        private System.Windows.Forms.Button CustomerInfoButton;
     }
 }
 
