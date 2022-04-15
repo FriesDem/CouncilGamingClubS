@@ -13,15 +13,18 @@ namespace CouncilGamingClub
     public partial class MainPage : Form
     {
         private LoginPage _login;
-        
+        public string _RoleName;
+        public Login_Page _user;
         public MainPage()
         {
             InitializeComponent();
         }
-        public MainPage(LoginPage login)
+        public MainPage(LoginPage login, Login_Page user)
         {
             InitializeComponent();
             _login = login;
+            _user = user;
+            _RoleName = user.UserRoles.FirstOrDefault().Role.name;
         }
         
 
@@ -63,6 +66,26 @@ namespace CouncilGamingClub
             this.Close();
             SuppliersForm SuppliesForm = new SuppliersForm();
             SuppliesForm.Show();
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+            if(_user.Password == Utils.DefaultHashpassword())
+            {
+                var resetPassword = new ResetPassword(_user);
+                resetPassword.Show();
+            }
+            if(_RoleName != "Manager")
+            {
+                btnManage.Visible = false;
+            }
+        }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            this.Close();
+           UserManagement UserManagementForm = new UserManagement();
+            UserManagementForm.Show();
         }
     }
 }
