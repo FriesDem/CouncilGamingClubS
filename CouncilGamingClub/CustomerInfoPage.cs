@@ -26,9 +26,11 @@ namespace CouncilGamingClub
        
         private void CHomeButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             MainPage MainForm = new MainPage();
+            MainForm.MdiParent = MainInterface.ActiveForm;
             MainForm.Show();
-            this.Hide();
+            
         }
 
 
@@ -102,6 +104,7 @@ namespace CouncilGamingClub
         private void btnViewData_Click_1(object sender, EventArgs e)
         {
             var viewData = new frmExistingData();
+            viewData.MdiParent = MainInterface.ActiveForm;
             viewData.Show();
             this.Hide();
         }

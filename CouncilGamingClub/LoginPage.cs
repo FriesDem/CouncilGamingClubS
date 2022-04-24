@@ -39,11 +39,12 @@ namespace CouncilGamingClub
                 }
                 else
                 {
-                    var mainPage = new MainPage(this,user);
-                    mainPage.Show();
+                    MainInterface Main = new MainInterface(this, user);
+                    Main.Show();
                     this.Hide();
                 }
             }
+             
             catch (Exception ex)
             {
 
@@ -51,6 +52,9 @@ namespace CouncilGamingClub
             }
         }
 
-      
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

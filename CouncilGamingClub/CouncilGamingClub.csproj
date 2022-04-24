@@ -102,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CGCTABLE.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MainInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Existing Customer Data.resx">
       <DependentUpon>Existing Customer Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
