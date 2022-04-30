@@ -19,9 +19,11 @@ namespace CouncilGamingClub
 
         private void OHomeButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             MainPage MainForm = new MainPage();
+            MainForm.MdiParent = MainInterface.ActiveForm;
             MainForm.Show();
-            this.Hide();
+            
         }
     }
 }

@@ -29,28 +29,22 @@ namespace CouncilGamingClub
                 var username = tbUsername.Text.Trim();
                 var password = tbPassword.Text;
 
-                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var hashed_password = Utils.Hashpassword(password);
+               
+                var user = _db.Login_Page.FirstOrDefault(Queryable=>Queryable.Username == username && Queryable.Password == hashed_password && Queryable.isActive == true);
 
-                StringBuilder sbuilder = new StringBuilder();
-
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sbuilder.Append(data[i].ToString("x2"));
-                }
-                var hashed_password = sbuilder.ToString();
-
-                var user = _db.Login_Pages.FirstOrDefault(Queryable=>Queryable.Username == username && Queryable.Password == hashed_password); 
-                if(user == null)
+                if (user == null)
                 {
                     MessageBox.Show("Please provide valid credentials");
                 }
                 else
                 {
-                    var mainPage = new MainPage(this);
-                    mainPage.Show();
+                    MainInterface Main = new MainInterface(this, user);
+                    Main.Show();
                     this.Hide();
                 }
             }
+             
             catch (Exception ex)
             {
 
@@ -58,6 +52,9 @@ namespace CouncilGamingClub
             }
         }
 
-      
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
