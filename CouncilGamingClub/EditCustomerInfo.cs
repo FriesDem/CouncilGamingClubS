@@ -29,6 +29,7 @@ namespace CouncilGamingClub
 
            
         }
+        
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -40,7 +41,7 @@ namespace CouncilGamingClub
             custInfo.Address = txtAddress.Text;
             
             cgcDB.SaveChanges();
-            MessageBox.Show("Nice. Your New Customer Record Has Been Added.");
+            MessageBox.Show("Nice. Your New Customer Record Has Been Added. Click Refresh to see changes");
         }
     }
 }

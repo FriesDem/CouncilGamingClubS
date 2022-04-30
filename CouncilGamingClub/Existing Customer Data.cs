@@ -73,8 +73,28 @@ namespace CouncilGamingClub
             //Remove
             cgcDB.CustomerInfoes.Remove(custInfo);
             cgcDB.SaveChanges();
-            MessageBox.Show("Your Record Has Been Deleted Successfully.");
+            MessageBox.Show("Your Record Has Been Deleted Successfully. Click Refresh to see changes");
             
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            FillTable();
+        }
+        private void FillTable()
+        {
+            var custInfo = cgcDB.CustomerInfoes.Select(cust => new
+            {
+                cust.ID,
+                UniqueID = cust.UniqueID,
+                CustomerFname = cust.CustomerFname,
+                CustomerLname = cust.CustomerLname,
+                Address = cust.Address
+            }).ToList();
+
+            gvCustInfo.DataSource = custInfo;
+            
+
         }
     }
 }
