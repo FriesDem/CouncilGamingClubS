@@ -47,7 +47,11 @@
             // 
             // btnAddCustomer
             // 
+<<<<<<< HEAD
             this.btnAddCustomer.Location = new System.Drawing.Point(169, 483);
+=======
+            this.btnAddCustomer.Location = new System.Drawing.Point(169, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnAddCustomer.TabIndex = 1;
@@ -57,7 +61,11 @@
             // 
             // btnEditCustomer
             // 
+<<<<<<< HEAD
             this.btnEditCustomer.Location = new System.Drawing.Point(499, 483);
+=======
+            this.btnEditCustomer.Location = new System.Drawing.Point(324, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnEditCustomer.TabIndex = 1;
@@ -67,7 +75,11 @@
             // 
             // btnDeleteCustomer
             // 
+<<<<<<< HEAD
             this.btnDeleteCustomer.Location = new System.Drawing.Point(855, 483);
+=======
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(467, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnDeleteCustomer.TabIndex = 1;
@@ -80,7 +92,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1095, 559);
+=======
+            this.ClientSize = new System.Drawing.Size(800, 450);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
