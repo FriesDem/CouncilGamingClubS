@@ -16,7 +16,7 @@ namespace CouncilGamingClub
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerInfoPage());
+            Application.Run(new LoginPage());
         }
     }
 }

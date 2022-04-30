@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuppliersForm));
             this.Employeeinfodisplay = new System.Windows.Forms.Panel();
-            this.LogoutButton = new System.Windows.Forms.Button();
             this.CGCLogo = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -51,24 +50,12 @@
             // Employeeinfodisplay
             // 
             this.Employeeinfodisplay.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Employeeinfodisplay.Controls.Add(this.LogoutButton);
             this.Employeeinfodisplay.Controls.Add(this.CGCLogo);
             this.Employeeinfodisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.Employeeinfodisplay.Location = new System.Drawing.Point(0, 0);
             this.Employeeinfodisplay.Name = "Employeeinfodisplay";
             this.Employeeinfodisplay.Size = new System.Drawing.Size(1053, 145);
             this.Employeeinfodisplay.TabIndex = 46;
-            // 
-            // LogoutButton
-            // 
-            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LogoutButton.ForeColor = System.Drawing.Color.Gold;
-            this.LogoutButton.Location = new System.Drawing.Point(138, 98);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(78, 24);
-            this.LogoutButton.TabIndex = 5;
-            this.LogoutButton.Text = "Logout";
-            this.LogoutButton.UseVisualStyleBackColor = true;
             // 
             // CGCLogo
             // 
@@ -222,7 +209,6 @@
         #endregion
 
         private System.Windows.Forms.Panel Employeeinfodisplay;
-        private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.PictureBox CGCLogo;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
