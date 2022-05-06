@@ -31,7 +31,7 @@
             this.gvOrders = new System.Windows.Forms.DataGridView();
             this.addOrder = new System.Windows.Forms.Button();
             this.btnEditOrder = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.lblManageOrders = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrders)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.addOrder.Name = "addOrder";
             this.addOrder.Size = new System.Drawing.Size(100, 46);
             this.addOrder.TabIndex = 1;
-            this.addOrder.Text = "Add";
+            this.addOrder.Text = "Add Order";
             this.addOrder.UseVisualStyleBackColor = true;
             this.addOrder.Click += new System.EventHandler(this.addOrder_Click);
             // 
@@ -60,17 +60,19 @@
             this.btnEditOrder.Name = "btnEditOrder";
             this.btnEditOrder.Size = new System.Drawing.Size(100, 46);
             this.btnEditOrder.TabIndex = 1;
-            this.btnEditOrder.Text = "Edit";
+            this.btnEditOrder.Text = "Edit Order";
             this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(435, 348);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 46);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(435, 348);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 46);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete Order";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblManageOrders
             // 
@@ -88,13 +90,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblManageOrders);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEditOrder);
             this.Controls.Add(this.addOrder);
             this.Controls.Add(this.gvOrders);
             this.Name = "ManageOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Orders";
+            this.Activated += new System.EventHandler(this.ManageOrders_Activated);
+            this.Load += new System.EventHandler(this.ManageOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,7 +110,7 @@
         private System.Windows.Forms.DataGridView gvOrders;
         private System.Windows.Forms.Button addOrder;
         private System.Windows.Forms.Button btnEditOrder;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblManageOrders;
     }
 }

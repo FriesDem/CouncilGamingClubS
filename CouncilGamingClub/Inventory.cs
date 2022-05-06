@@ -32,7 +32,7 @@ namespace CouncilGamingClub
 
         private void viewInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this. Close();
+            this.Close();
             var manageInventory = new InventoryManagementWindow();
             manageInventory.MdiParent = MainInterface.ActiveForm;
             manageInventory.Show();
@@ -42,13 +42,18 @@ namespace CouncilGamingClub
         {
             try
             {
-                int invID = Convert.ToInt32(tbInvID.Text);
+                string invID = tbItemID.Text;
+                string itemName = tbItemName.Text;
                 int invAmount = Convert.ToInt32(tbItemAmount.Text);
-                string invType = tbTypeOfItem.Text;
+                string invType = tbItemName.Text;
+                string supplierID = tbSupplierID.Text;
 
-                inventory.ID = invID;
+                inventory.ItemID = invID;
+                inventory.SupplierID = supplierID;
                 inventory.Amount = invAmount;
                 inventory.Type_Of_Item = invType;
+                inventory.ItemName = itemName;
+
                 cgcDB.InventoryTables.Add(inventory);
                 cgcDB.SaveChanges();
 

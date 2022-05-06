@@ -105,6 +105,30 @@
     <Compile Include="CustomerInfo.cs">
       <DependentUpon>CGCAppDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditOrdersWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditOrdersWindow.Designer.cs">
+      <DependentUpon>EditOrdersWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditInventory.Designer.cs">
+      <DependentUpon>frmEditInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditSupplier.Designer.cs">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageSuppliers.Designer.cs">
+      <DependentUpon>frmManageSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOrdersWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,8 +242,20 @@
     <EmbeddedResource Include="EditCustomerInfo.resx">
       <DependentUpon>EditCustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditOrdersWindow.resx">
+      <DependentUpon>EditOrdersWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Existing Customer Data.resx">
       <DependentUpon>Existing Customer Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditInventory.resx">
+      <DependentUpon>frmEditInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditSupplier.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageSuppliers.resx">
+      <DependentUpon>frmManageSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrdersWindow.resx">
       <DependentUpon>frmOrdersWindow.cs</DependentUpon>

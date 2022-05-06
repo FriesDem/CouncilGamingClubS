@@ -28,10 +28,18 @@ namespace CouncilGamingClub
                 int orderID = Convert.ToInt32(tbOrderID.Text);
                 string orderType = tbOrderType.Text;
                 int orderAmount = Convert.ToInt32(tbItemAmount.Text);
+                int totalCost = Convert.ToInt32(txtTotalCost.Text);
+                string custID = txtCustID.Text;
+                string uniqueID = tbOrderID.Text;
 
                 ordersTable.ID = orderID;
+                ordersTable.OrderID = uniqueID;
                 ordersTable.Product_Name = orderType;
                 ordersTable.Amount = orderAmount; 
+                ordersTable.TotalCost = totalCost;
+                ordersTable.Cust_ID = custID;
+               
+
                 cgcDB.OrdersTables.Add(ordersTable);
                 cgcDB.SaveChanges();
 
@@ -43,6 +51,14 @@ namespace CouncilGamingClub
                 MessageBox.Show("An Error Occurred");
                 
             }
+        }
+
+        private void viewOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var manageOrder = new ManageOrders();
+            manageOrder.MdiParent = MainInterface.ActiveForm;
+            manageOrder.Show();
         }
     }
 }

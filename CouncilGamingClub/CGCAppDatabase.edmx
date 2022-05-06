@@ -40,10 +40,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Product Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderID" Type="nvarchar" MaxLength="10" />
+          <Property Name="Product Name" Type="nchar" MaxLength="10" />
           <Property Name="Amount" Type="int" />
           <Property Name="TotalCost" Type="int" />
-          <Property Name="Cust_ID" Type="int" Nullable="false" />
+          <Property Name="Cust_ID" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -52,8 +53,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SupplierTable">
           <Key>
             <PropertyRef Name="ID" />
@@ -71,18 +70,6 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <Property Name="userid" Type="int" />
           <Property Name="roleid" Type="int" />
         </EntityType>
-        <Association Name="FK_Orders_CustomerInfo">
-          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
-          <End Role="OrdersTable" Type="Self.OrdersTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CustomerInfo">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="OrdersTable">
-              <PropertyRef Name="Cust_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Supplier Table_Inventory Table">
           <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
           <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
@@ -125,19 +112,8 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <EntitySet Name="Login Page" EntityType="Self.Login Page" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdersTable" EntityType="Self.OrdersTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierTable" EntityType="Self.SupplierTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SupplierTable" EntityType="Self.SupplierTable" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SupplierTable].[ID] AS [ID], 
-    [SupplierTable].[SupplierName] AS [SupplierName], 
-    [SupplierTable].[SupplierID] AS [SupplierID], 
-    [SupplierTable].[Address] AS [Address]
-    FROM [dbo].[SupplierTable] AS [SupplierTable]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
-            <End Role="CustomerInfo" EntitySet="CustomerInfo" />
-            <End Role="OrdersTable" EntitySet="OrdersTable" />
-          </AssociationSet>
           <AssociationSet Name="FK_Supplier Table_Inventory Table" Association="Self.FK_Supplier Table_Inventory Table">
             <End Role="InventoryTable" EntitySet="InventoryTable" />
             <End Role="SupplierTable" EntitySet="SupplierTable" />
@@ -164,7 +140,6 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <Property Name="CustomerFname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="CustomerLname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OrdersTables" Relationship="Self.FK_Orders_CustomerInfo" FromRole="CustomerInfo" ToRole="OrdersTable" />
         </EntityType>
         <EntityType Name="InventoryTable">
           <Key>
@@ -193,11 +168,11 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="TotalCost" Type="Int32" />
-          <Property Name="Cust_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_Orders_CustomerInfo" FromRole="OrdersTable" ToRole="CustomerInfo" />
+          <Property Name="Cust_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="OrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -206,16 +181,6 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_Roles" FromRole="Roles" ToRole="UserRoles" />
-        </EntityType>
-        <EntityType Name="UserRole">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userid" Type="Int32" />
-          <Property Name="roleid" Type="Int32" />
-          <NavigationProperty Name="Login_Page" Relationship="Self.FK_UserRoles_Login_Page" FromRole="UserRoles" ToRole="Login_Page" />
-          <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles" FromRole="UserRoles" ToRole="Roles" />
         </EntityType>
         <EntityType Name="SupplierTable">
           <Key>
@@ -227,18 +192,16 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <Property Name="Address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="InventoryTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="SupplierTable" ToRole="InventoryTable" />
         </EntityType>
-        <Association Name="FK_Orders_CustomerInfo">
-          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
-          <End Role="OrdersTable" Type="Self.OrdersTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CustomerInfo">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="OrdersTable">
-              <PropertyRef Name="Cust_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="roleid" Type="Int32" />
+          <NavigationProperty Name="Login_Page" Relationship="Self.FK_UserRoles_Login_Page" FromRole="UserRoles" ToRole="Login_Page" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles" FromRole="UserRoles" ToRole="Roles" />
+        </EntityType>
         <Association Name="FK_Supplier_Table_Inventory_Table">
           <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
           <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
@@ -281,12 +244,8 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <EntitySet Name="Login_Pages" EntityType="Self.Login_Page" />
           <EntitySet Name="OrdersTables" EntityType="Self.OrdersTable" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
           <EntitySet Name="SupplierTables" EntityType="Self.SupplierTable" />
-          <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
-            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
-            <End Role="OrdersTable" EntitySet="OrdersTables" />
-          </AssociationSet>
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
           <AssociationSet Name="FK_Supplier_Table_Inventory_Table" Association="Self.FK_Supplier_Table_Inventory_Table">
             <End Role="InventoryTable" EntitySet="InventoryTables" />
             <End Role="SupplierTable" EntitySet="SupplierTables" />
@@ -342,6 +301,7 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
           <EntitySetMapping Name="OrdersTables">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.OrdersTable">
               <MappingFragment StoreEntitySet="OrdersTable">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -358,15 +318,6 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserRoles">
-            <EntityTypeMapping TypeName="CGCAppDatabaseModel.UserRole">
-              <MappingFragment StoreEntitySet="UserRoles">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userid" ColumnName="userid" />
-                <ScalarProperty Name="roleid" ColumnName="roleid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SupplierTables">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.SupplierTable">
               <MappingFragment StoreEntitySet="SupplierTable">
@@ -374,6 +325,15 @@ warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a 
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -18,8 +18,7 @@ namespace CouncilGamingClub
         public string Product_Name { get; set; }
         public Nullable<int> Amount { get; set; }
         public Nullable<int> TotalCost { get; set; }
-        public int Cust_ID { get; set; }
-    
-        public virtual CustomerInfo CustomerInfo { get; set; }
+        public string Cust_ID { get; set; }
+        public string OrderID { get; set; }
     }
 }

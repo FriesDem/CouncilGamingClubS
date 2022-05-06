@@ -35,14 +35,18 @@
             this.inventoryMmenuStrip = new System.Windows.Forms.MenuStrip();
             this.inventoryOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbInvID = new System.Windows.Forms.TextBox();
+            this.tbItemID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbTypeOfItem = new System.Windows.Forms.TextBox();
+            this.tbItemName = new System.Windows.Forms.TextBox();
             this.tbItemAmount = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblInventoryId = new System.Windows.Forms.Label();
             this.lblTypeOfItem = new System.Windows.Forms.Label();
             this.lblItemAmount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbTypeOfItem = new System.Windows.Forms.TextBox();
+            this.tbSupplierID = new System.Windows.Forms.TextBox();
+            this.lblSupplierID = new System.Windows.Forms.Label();
             this.Employeeinfodisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CGCLogo)).BeginInit();
             this.inventoryMmenuStrip.SuspendLayout();
@@ -113,13 +117,13 @@
             this.viewInventoryToolStripMenuItem.Text = "View Inventory";
             this.viewInventoryToolStripMenuItem.Click += new System.EventHandler(this.viewInventoryToolStripMenuItem_Click);
             // 
-            // tbInvID
+            // tbItemID
             // 
-            this.tbInvID.Location = new System.Drawing.Point(87, 218);
-            this.tbInvID.Margin = new System.Windows.Forms.Padding(2);
-            this.tbInvID.Name = "tbInvID";
-            this.tbInvID.Size = new System.Drawing.Size(171, 20);
-            this.tbInvID.TabIndex = 32;
+            this.tbItemID.Location = new System.Drawing.Point(87, 218);
+            this.tbItemID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbItemID.Name = "tbItemID";
+            this.tbItemID.Size = new System.Drawing.Size(171, 20);
+            this.tbItemID.TabIndex = 32;
             // 
             // label1
             // 
@@ -132,13 +136,13 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Inventory";
             // 
-            // tbTypeOfItem
+            // tbItemName
             // 
-            this.tbTypeOfItem.Location = new System.Drawing.Point(307, 218);
-            this.tbTypeOfItem.Margin = new System.Windows.Forms.Padding(2);
-            this.tbTypeOfItem.Name = "tbTypeOfItem";
-            this.tbTypeOfItem.Size = new System.Drawing.Size(171, 20);
-            this.tbTypeOfItem.TabIndex = 32;
+            this.tbItemName.Location = new System.Drawing.Point(307, 218);
+            this.tbItemName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbItemName.Name = "tbItemName";
+            this.tbItemName.Size = new System.Drawing.Size(171, 20);
+            this.tbItemName.TabIndex = 32;
             // 
             // tbItemAmount
             // 
@@ -150,9 +154,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(585, 422);
+            this.btnSubmit.Location = new System.Drawing.Point(619, 418);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 35);
             this.btnSubmit.TabIndex = 33;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -162,18 +166,18 @@
             // 
             this.lblInventoryId.AutoSize = true;
             this.lblInventoryId.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventoryId.Location = new System.Drawing.Point(115, 188);
+            this.lblInventoryId.Location = new System.Drawing.Point(127, 188);
             this.lblInventoryId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInventoryId.Name = "lblInventoryId";
-            this.lblInventoryId.Size = new System.Drawing.Size(126, 24);
+            this.lblInventoryId.Size = new System.Drawing.Size(81, 24);
             this.lblInventoryId.TabIndex = 25;
-            this.lblInventoryId.Text = "Inventory ID";
+            this.lblInventoryId.Text = "Item ID";
             // 
             // lblTypeOfItem
             // 
             this.lblTypeOfItem.AutoSize = true;
             this.lblTypeOfItem.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeOfItem.Location = new System.Drawing.Point(317, 188);
+            this.lblTypeOfItem.Location = new System.Drawing.Point(109, 291);
             this.lblTypeOfItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTypeOfItem.Name = "lblTypeOfItem";
             this.lblTypeOfItem.Size = new System.Drawing.Size(131, 24);
@@ -184,12 +188,50 @@
             // 
             this.lblItemAmount.AutoSize = true;
             this.lblItemAmount.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemAmount.Location = new System.Drawing.Point(581, 188);
+            this.lblItemAmount.Location = new System.Drawing.Point(570, 188);
             this.lblItemAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemAmount.Name = "lblItemAmount";
             this.lblItemAmount.Size = new System.Drawing.Size(130, 24);
             this.lblItemAmount.TabIndex = 25;
             this.lblItemAmount.Text = "Item Amount";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(336, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 24);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Item Name";
+            // 
+            // tbTypeOfItem
+            // 
+            this.tbTypeOfItem.Location = new System.Drawing.Point(87, 317);
+            this.tbTypeOfItem.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTypeOfItem.Name = "tbTypeOfItem";
+            this.tbTypeOfItem.Size = new System.Drawing.Size(171, 20);
+            this.tbTypeOfItem.TabIndex = 32;
+            // 
+            // tbSupplierID
+            // 
+            this.tbSupplierID.Location = new System.Drawing.Point(307, 317);
+            this.tbSupplierID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSupplierID.Name = "tbSupplierID";
+            this.tbSupplierID.Size = new System.Drawing.Size(171, 20);
+            this.tbSupplierID.TabIndex = 32;
+            // 
+            // lblSupplierID
+            // 
+            this.lblSupplierID.AutoSize = true;
+            this.lblSupplierID.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierID.Location = new System.Drawing.Point(335, 291);
+            this.lblSupplierID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSupplierID.Name = "lblSupplierID";
+            this.lblSupplierID.Size = new System.Drawing.Size(113, 24);
+            this.lblSupplierID.TabIndex = 25;
+            this.lblSupplierID.Text = "Supplier ID";
             // 
             // Inventory
             // 
@@ -200,9 +242,13 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.Employeeinfodisplay);
             this.Controls.Add(this.tbItemAmount);
+            this.Controls.Add(this.tbSupplierID);
             this.Controls.Add(this.tbTypeOfItem);
-            this.Controls.Add(this.tbInvID);
+            this.Controls.Add(this.tbItemName);
+            this.Controls.Add(this.tbItemID);
             this.Controls.Add(this.lblItemAmount);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSupplierID);
             this.Controls.Add(this.lblTypeOfItem);
             this.Controls.Add(this.lblInventoryId);
             this.Controls.Add(this.label1);
@@ -226,9 +272,9 @@
 
         private System.Windows.Forms.Panel Employeeinfodisplay;
         private System.Windows.Forms.PictureBox CGCLogo;
-        private System.Windows.Forms.TextBox tbInvID;
+        private System.Windows.Forms.TextBox tbItemID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbTypeOfItem;
+        private System.Windows.Forms.TextBox tbItemName;
         private System.Windows.Forms.TextBox tbItemAmount;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button OHomeButton;
@@ -238,5 +284,9 @@
         private System.Windows.Forms.Label lblInventoryId;
         private System.Windows.Forms.Label lblTypeOfItem;
         private System.Windows.Forms.Label lblItemAmount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbTypeOfItem;
+        private System.Windows.Forms.TextBox tbSupplierID;
+        private System.Windows.Forms.Label lblSupplierID;
     }
 }

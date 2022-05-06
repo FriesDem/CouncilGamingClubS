@@ -95,7 +95,7 @@ namespace CouncilGamingClub
                 //Remove
                 cgcDB.CustomerInfoes.Remove(custInfo);
                 cgcDB.SaveChanges();
-                MessageBox.Show("Your Record Has Been Deleted Successfull");
+                MessageBox.Show("Your Record Has Been Deleted Successfully");
             }
             catch (Exception ex)
             {

@@ -30,7 +30,7 @@ namespace CouncilGamingClub
         public virtual DbSet<Login_Page> Login_Pages { get; set; }
         public virtual DbSet<OrdersTable> OrdersTables { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<SupplierTable> SupplierTables { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
     }
 }

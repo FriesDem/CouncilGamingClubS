@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lblManageOrders = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEditOrder = new System.Windows.Forms.Button();
-            this.addOrder = new System.Windows.Forms.Button();
+            this.btnAddOrder = new System.Windows.Forms.Button();
             this.gvInventory = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).BeginInit();
             this.SuspendLayout();
@@ -40,20 +40,21 @@
             // 
             this.lblManageOrders.AutoSize = true;
             this.lblManageOrders.Font = new System.Drawing.Font("Dosis", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageOrders.Location = new System.Drawing.Point(278, 54);
+            this.lblManageOrders.Location = new System.Drawing.Point(258, 54);
             this.lblManageOrders.Name = "lblManageOrders";
             this.lblManageOrders.Size = new System.Drawing.Size(287, 47);
             this.lblManageOrders.TabIndex = 7;
             this.lblManageOrders.Text = "Manage Inventory";
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(451, 351);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 46);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(451, 351);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 46);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete Inventory";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEditOrder
             // 
@@ -61,17 +62,19 @@
             this.btnEditOrder.Name = "btnEditOrder";
             this.btnEditOrder.Size = new System.Drawing.Size(100, 46);
             this.btnEditOrder.TabIndex = 5;
-            this.btnEditOrder.Text = "Edit";
+            this.btnEditOrder.Text = "Edit Inventory";
             this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
-            // addOrder
+            // btnAddOrder
             // 
-            this.addOrder.Location = new System.Drawing.Point(240, 351);
-            this.addOrder.Name = "addOrder";
-            this.addOrder.Size = new System.Drawing.Size(100, 46);
-            this.addOrder.TabIndex = 6;
-            this.addOrder.Text = "Add";
-            this.addOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Location = new System.Drawing.Point(240, 351);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(100, 46);
+            this.btnAddOrder.TabIndex = 6;
+            this.btnAddOrder.Text = "Add Inventory";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // gvInventory
             // 
@@ -87,13 +90,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblManageOrders);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEditOrder);
-            this.Controls.Add(this.addOrder);
+            this.Controls.Add(this.btnAddOrder);
             this.Controls.Add(this.gvInventory);
             this.Name = "InventoryManagementWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management Window";
+            this.Load += new System.EventHandler(this.InventoryManagementWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,9 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblManageOrders;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEditOrder;
-        private System.Windows.Forms.Button addOrder;
+        private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView gvInventory;
     }
 }
