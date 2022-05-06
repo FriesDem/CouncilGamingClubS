@@ -38,7 +38,8 @@
             // gvCustInfo
             // 
             this.gvCustInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCustInfo.Location = new System.Drawing.Point(98, 63);
+            this.gvCustInfo.Location = new System.Drawing.Point(4, 86);
+            this.gvCustInfo.Margin = new System.Windows.Forms.Padding(4);
             this.gvCustInfo.Name = "gvCustInfo";
             this.gvCustInfo.RowHeadersWidth = 51;
             this.gvCustInfo.Size = new System.Drawing.Size(458, 278);
@@ -46,8 +47,11 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(162, 366);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(2);
+<<<<<<< HEAD
+            this.btnAddCustomer.Location = new System.Drawing.Point(169, 483);
+=======
+            this.btnAddCustomer.Location = new System.Drawing.Point(169, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(113, 52);
             this.btnAddCustomer.TabIndex = 1;
@@ -57,10 +61,13 @@
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(278, 366);
-            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(2);
+<<<<<<< HEAD
+            this.btnEditCustomer.Location = new System.Drawing.Point(499, 483);
+=======
+            this.btnEditCustomer.Location = new System.Drawing.Point(324, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(113, 52);
+            this.btnEditCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnEditCustomer.TabIndex = 1;
             this.btnEditCustomer.Text = "Edit Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
@@ -68,10 +75,13 @@
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(385, 366);
-            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(2);
+<<<<<<< HEAD
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(855, 483);
+=======
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(467, 386);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(113, 52);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnDeleteCustomer.TabIndex = 1;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
@@ -82,19 +92,24 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(717, 440);
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(1095, 559);
+=======
+            this.ClientSize = new System.Drawing.Size(800, 450);
+>>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.gvCustInfo);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmExistingData";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Existing Customer Data";
             this.Activated += new System.EventHandler(this.frmExistingData_Activated);
             this.Load += new System.EventHandler(this.frmExistingData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvCustInfo)).EndInit();
             this.ResumeLayout(false);
 
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
         }
 
         #endregion
