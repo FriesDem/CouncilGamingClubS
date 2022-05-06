@@ -26,10 +26,11 @@ namespace CouncilGamingClub
         }
     
         public virtual DbSet<CustomerInfo> CustomerInfoes { get; set; }
-        public virtual DbSet<Inventory_Table> Inventory_Tables { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Login_Page> Login_Page { get; set; }
+        public virtual DbSet<InventoryTable> InventoryTables { get; set; }
+        public virtual DbSet<Login_Page> Login_Pages { get; set; }
+        public virtual DbSet<OrdersTable> OrdersTables { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<SupplierTable> SupplierTables { get; set; }
     }
 }

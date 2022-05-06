@@ -49,7 +49,7 @@ namespace CouncilGamingClub
                     Password = password,
                     isActive = true
                 };
-                _db.Login_Page.Add(USER);
+                _db.Login_Pages.Add(USER);
                 _db.SaveChanges();
                 var userid = USER.ID;
 

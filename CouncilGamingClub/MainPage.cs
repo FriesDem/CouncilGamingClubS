@@ -22,7 +22,7 @@ namespace CouncilGamingClub
         {
            
             this.Close();
-            var OrdersForm = new Orders();
+            var OrdersForm = new OrdersWindow();
             OrdersForm.MdiParent = MainInterface.ActiveForm;
             OrdersForm.Show();
         }

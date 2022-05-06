@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CGCAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CustomerInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniqueID" Type="nchar" MaxLength="10" />
+          <Property Name="CustomerFname" Type="nchar" MaxLength="20" />
+          <Property Name="CustomerLname" Type="nchar" MaxLength="20" />
+          <Property Name="Address" Type="text" />
+        </EntityType>
+        <EntityType Name="InventoryTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemID" Type="nchar" MaxLength="10" />
+          <Property Name="ItemName" Type="nchar" MaxLength="15" />
+          <Property Name="Type Of Item" Type="nchar" MaxLength="20" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="SupplierID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Login Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="isActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="OrdersTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="TotalCost" Type="int" />
+          <Property Name="Cust_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CGCAppDatabase.dbo.SupplierTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SupplierTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nchar" MaxLength="10" />
+          <Property Name="SupplierID" Type="nchar" MaxLength="10" />
+          <Property Name="Address" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" />
+          <Property Name="roleid" Type="int" />
+        </EntityType>
+        <Association Name="FK_Orders_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="OrdersTable" Type="Self.OrdersTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdersTable">
+              <PropertyRef Name="Cust_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier Table_Inventory Table">
+          <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
+          <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="InventoryTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierTable">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Login Page">
+          <End Role="Login Page" Type="Self.Login Page" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login Page">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CGCAppDatabaseModelStoreContainer">
+          <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryTable" EntityType="Self.InventoryTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login Page" EntityType="Self.Login Page" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdersTable" EntityType="Self.OrdersTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierTable" EntityType="Self.SupplierTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SupplierTable].[ID] AS [ID], 
+    [SupplierTable].[SupplierName] AS [SupplierName], 
+    [SupplierTable].[SupplierID] AS [SupplierID], 
+    [SupplierTable].[Address] AS [Address]
+    FROM [dbo].[SupplierTable] AS [SupplierTable]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+            <End Role="OrdersTable" EntitySet="OrdersTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier Table_Inventory Table" Association="Self.FK_Supplier Table_Inventory Table">
+            <End Role="InventoryTable" EntitySet="InventoryTable" />
+            <End Role="SupplierTable" EntitySet="SupplierTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Login Page" Association="Self.FK_UserRoles_Login Page">
+            <End Role="Login Page" EntitySet="Login Page" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CGCAppDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CustomerInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CustomerFname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="CustomerLname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrdersTables" Relationship="Self.FK_Orders_CustomerInfo" FromRole="CustomerInfo" ToRole="OrdersTable" />
+        </EntityType>
+        <EntityType Name="InventoryTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ItemName" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Type_Of_Item" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="SupplierTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="InventoryTable" ToRole="SupplierTable" />
+        </EntityType>
+        <EntityType Name="Login_Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_Login_Page" FromRole="Login_Page" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="OrdersTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="TotalCost" Type="Int32" />
+          <Property Name="Cust_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerInfo" Relationship="Self.FK_Orders_CustomerInfo" FromRole="OrdersTable" ToRole="CustomerInfo" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_Roles" FromRole="Roles" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="roleid" Type="Int32" />
+          <NavigationProperty Name="Login_Page" Relationship="Self.FK_UserRoles_Login_Page" FromRole="UserRoles" ToRole="Login_Page" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles" FromRole="UserRoles" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="SupplierTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="InventoryTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="SupplierTable" ToRole="InventoryTable" />
+        </EntityType>
+        <Association Name="FK_Orders_CustomerInfo">
+          <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+          <End Role="OrdersTable" Type="Self.OrdersTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdersTable">
+              <PropertyRef Name="Cust_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Table_Inventory_Table">
+          <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
+          <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="InventoryTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplierTable">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Login_Page">
+          <End Role="Login_Page" Type="Self.Login_Page" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login_Page">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CGCAppDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
+          <EntitySet Name="InventoryTables" EntityType="Self.InventoryTable" />
+          <EntitySet Name="Login_Pages" EntityType="Self.Login_Page" />
+          <EntitySet Name="OrdersTables" EntityType="Self.OrdersTable" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <EntitySet Name="SupplierTables" EntityType="Self.SupplierTable" />
+          <AssociationSet Name="FK_Orders_CustomerInfo" Association="Self.FK_Orders_CustomerInfo">
+            <End Role="CustomerInfo" EntitySet="CustomerInfoes" />
+            <End Role="OrdersTable" EntitySet="OrdersTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Table_Inventory_Table" Association="Self.FK_Supplier_Table_Inventory_Table">
+            <End Role="InventoryTable" EntitySet="InventoryTables" />
+            <End Role="SupplierTable" EntitySet="SupplierTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Login_Page" Association="Self.FK_UserRoles_Login_Page">
+            <End Role="Login_Page" EntitySet="Login_Pages" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CGCAppDatabaseModelStoreContainer" CdmEntityContainer="CGCAppDatabaseEntities">
+          <EntitySetMapping Name="CustomerInfoes">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.CustomerInfo">
+              <MappingFragment StoreEntitySet="CustomerInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="CustomerFname" ColumnName="CustomerFname" />
+                <ScalarProperty Name="CustomerLname" ColumnName="CustomerLname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryTables">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.InventoryTable">
+              <MappingFragment StoreEntitySet="InventoryTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Type_Of_Item" ColumnName="Type Of Item" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Pages">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.Login_Page">
+              <MappingFragment StoreEntitySet="Login Page">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdersTables">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.OrdersTable">
+              <MappingFragment StoreEntitySet="OrdersTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Cust_ID" ColumnName="Cust_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierTables">
+            <EntityTypeMapping TypeName="CGCAppDatabaseModel.SupplierTable">
+              <MappingFragment StoreEntitySet="SupplierTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

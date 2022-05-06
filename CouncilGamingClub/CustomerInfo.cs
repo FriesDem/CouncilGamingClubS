@@ -17,7 +17,7 @@ namespace CouncilGamingClub
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CustomerInfo()
         {
-            this.Orders = new HashSet<Order>();
+            this.OrdersTables = new HashSet<OrdersTable>();
         }
     
         public int ID { get; set; }
@@ -27,6 +27,6 @@ namespace CouncilGamingClub
         public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<OrdersTable> OrdersTables { get; set; }
     }
 }

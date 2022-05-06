@@ -27,7 +27,7 @@ namespace CouncilGamingClub
             {
                 var password = tbPassword.Text;
                 var confirm_password = tbConfirmPassword.Text;
-                var user = _db.Login_Page.FirstOrDefault(q => q.ID == _user.ID);
+                var user = _db.Login_Pages.FirstOrDefault(q => q.ID == _user.ID);
                 if (password != confirm_password)
                 {
                     MessageBox.Show("Password do not match.Please try again!");

@@ -12,14 +12,13 @@ namespace CouncilGamingClub
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class SupplierTable
     {
         public int ID { get; set; }
-        public string Product_Name { get; set; }
-        public Nullable<int> Amount { get; set; }
-        public Nullable<decimal> TotalCost { get; set; }
-        public int Cust_ID { get; set; }
+        public string SupplierName { get; set; }
+        public string SupplierID { get; set; }
+        public string Address { get; set; }
     
-        public virtual CustomerInfo CustomerInfo { get; set; }
+        public virtual InventoryTable InventoryTable { get; set; }
     }
 }

@@ -37,10 +37,14 @@ namespace CouncilGamingClub
             //gvCustInfo.Columns[1].HeaderText = "First Name";
             //gvCustInfo.Columns[2].HeaderText = "Last Name";
             gvCustInfo.Columns[0].Visible = false;
-            MessageBox.Show("Select A Record then Click an option below");
 
+            
         }
 
+        private void ShowMessage()
+        {
+            MessageBox.Show("Select A Record then Click an option below");
+        }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             CustomerInfoPage customerInfo = new CustomerInfoPage();
@@ -51,38 +55,57 @@ namespace CouncilGamingClub
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-          
-            //get ID of selected row
-            var ID = (int)gvCustInfo.SelectedRows[0].Cells["ID"].Value;
+            try
+            {
+                //get ID of selected row
+                var ID = (int)gvCustInfo.SelectedRows[0].Cells["ID"].Value;
 
-            //query Database 
-            var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
+                //query Database 
+                var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
 
-            var existingInfo = new frmEditCustomer(custInfo);
-            existingInfo.MdiParent = MainInterface.ActiveForm;
-            existingInfo.Show();
+                var existingInfo = new frmEditCustomer(custInfo);
+                existingInfo.MdiParent = MainInterface.ActiveForm;
+                existingInfo.Show();
+            }
+
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Select a Record First");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FillTable();
         }  
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            
-            //get ID of selected row
-            var ID = (int)gvCustInfo.SelectedRows[0].Cells["ID"].Value;
 
-            //query Database 
-            var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
-            
-            //Remove
-            cgcDB.CustomerInfoes.Remove(custInfo);
-            cgcDB.SaveChanges();
-            MessageBox.Show("Your Record Has Been Deleted Successfully. Click Refresh to see changes");
-            
-        }
+            try
+            {
+                //get ID of selected row
+                var ID = (int)gvCustInfo.SelectedRows[0].Cells["ID"].Value;
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
+                //query Database 
+                var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
+
+                //Remove
+                cgcDB.CustomerInfoes.Remove(custInfo);
+                cgcDB.SaveChanges();
+                MessageBox.Show("Your Record Has Been Deleted Successfull");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             FillTable();
         }
+
+       
         private void FillTable()
         {
             var custInfo = cgcDB.CustomerInfoes.Select(cust => new
@@ -105,6 +128,11 @@ namespace CouncilGamingClub
             var Customer = new CustomerInfoPage();
             Customer.MdiParent = MainInterface.ActiveForm;
             Customer.Show();
+        }
+
+        private void frmExistingData_Activated(object sender, EventArgs e)
+        {
+            ShowMessage();
         }
     }
 }

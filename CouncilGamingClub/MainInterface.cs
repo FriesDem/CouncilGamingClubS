@@ -93,7 +93,7 @@ namespace CouncilGamingClub
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainInterface MainInterface = new MainInterface();
+            LoginPage MainInterface = new LoginPage();
             MainInterface.Show();
 
         }

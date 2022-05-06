@@ -87,20 +87,41 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="CGCTABLE.Context.cs">
+    <Compile Include="CGCAppDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CGCTABLE.Context.tt</DependentUpon>
+      <DependentUpon>CGCAppDatabase.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CGCTABLE.cs">
+    <Compile Include="CGCAppDatabase.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="CGCTABLE.Designer.cs">
+    <Compile Include="CGCAppDatabase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+      <DependentUpon>CGCAppDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfo.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdersWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdersWindow.Designer.cs">
+      <DependentUpon>frmOrdersWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryManagementWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManagementWindow.Designer.cs">
+      <DependentUpon>InventoryManagementWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryTable.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Page.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="MainInterface.cs">
       <SubType>Form</SubType>
@@ -108,16 +129,31 @@
     <Compile Include="MainInterface.Designer.cs">
       <DependentUpon>MainInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrders.Designer.cs">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTable.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ResetPassword.Designer.cs">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
-    <Compile Include="CustomerInfo.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
+    <Compile Include="Role.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="SupplierTable.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>CGCAppDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="CustomerInfoPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,20 +172,11 @@
     <Compile Include="Existing Customer Data.Designer.cs">
       <DependentUpon>Existing Customer Data.cs</DependentUpon>
     </Compile>
-    <Compile Include="Role.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
-    </Compile>
     <Compile Include="UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserManagement.Designer.cs">
       <DependentUpon>UserManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inventory_Table.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Login_Page.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
     </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -161,15 +188,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
@@ -191,9 +209,6 @@
     <Compile Include="SuppliersForm.Designer.cs">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserRole.cs">
-      <DependentUpon>CGCTABLE.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +221,17 @@
     <EmbeddedResource Include="Existing Customer Data.resx">
       <DependentUpon>Existing Customer Data.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdersWindow.resx">
+      <DependentUpon>frmOrdersWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryManagementWindow.resx">
+      <DependentUpon>InventoryManagementWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
@@ -217,9 +241,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
@@ -240,12 +261,13 @@
     <EmbeddedResource Include="SuppliersForm.resx">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="CGCTABLE.edmx">
+    <EntityDeploy Include="CGCAppDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CGCTABLE.Designer.cs</LastGenOutput>
+      <LastGenOutput>CGCAppDatabase.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CGCTABLE.edmx.diagram">
-      <DependentUpon>CGCTABLE.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="CGCAppDatabase.edmx.diagram">
+      <DependentUpon>CGCAppDatabase.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -259,18 +281,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CGCTABLE.Context.tt">
+    <Content Include="CGCAppDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CGCTABLE.edmx</DependentUpon>
-      <LastGenOutput>CGCTABLE.Context.cs</LastGenOutput>
+      <DependentUpon>CGCAppDatabase.edmx</DependentUpon>
+      <LastGenOutput>CGCAppDatabase.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="CGCTABLE.tt">
+    <Content Include="CGCAppDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CGCTABLE.edmx</DependentUpon>
-      <LastGenOutput>CGCTABLE.cs</LastGenOutput>
+      <DependentUpon>CGCAppDatabase.edmx</DependentUpon>
+      <LastGenOutput>CGCAppDatabase.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

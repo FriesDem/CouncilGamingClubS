@@ -31,8 +31,8 @@ namespace CouncilGamingClub
 
                 var hashed_password = Utils.Hashpassword(password);
                
-                var user = _db.Login_Page.FirstOrDefault(Queryable=>Queryable.Username == username && Queryable.Password == hashed_password && Queryable.isActive == true);
-
+                var user = _db.Login_Pages.FirstOrDefault(Queryable=>Queryable.Username == username && Queryable.Password == hashed_password && Queryable.isActive == true);
+                
                 if (user == null)
                 {
                     MessageBox.Show("Please provide valid credentials");

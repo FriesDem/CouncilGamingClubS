@@ -33,15 +33,28 @@ namespace CouncilGamingClub
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            var ID = int.Parse(lblID.Text);
-            var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
-            custInfo.UniqueID = txtUniqueID.Text;
-            custInfo.CustomerFname = txtFName.Text;
-            custInfo.CustomerLname = txtLName.Text;
-            custInfo.Address = txtAddress.Text;
-            
-            cgcDB.SaveChanges();
-            MessageBox.Show("Nice. Your New Customer Record Has Been Added. Click Refresh to see changes");
+            try
+            {
+                var ID = int.Parse(lblID.Text);
+                var custInfo = cgcDB.CustomerInfoes.FirstOrDefault(dt => dt.ID == ID);
+                custInfo.UniqueID = txtUniqueID.Text;
+                custInfo.CustomerFname = txtFName.Text;
+                custInfo.CustomerLname = txtLName.Text;
+                custInfo.Address = txtAddress.Text;
+
+                cgcDB.SaveChanges();
+                MessageBox.Show("Nice. Your New Customer Record Has Been Added.");
+
+                this.Close();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("An Error Occured");
+            }
         }
+
+       
     }
 }

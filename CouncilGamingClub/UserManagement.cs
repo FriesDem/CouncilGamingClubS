@@ -41,7 +41,7 @@ namespace CouncilGamingClub
                 var ID = (int)gvUserList.SelectedRows[0].Cells["id"].Value;
 
                 //query Database 
-                var user = _db.Login_Page.FirstOrDefault(Queryable => Queryable.ID == ID);
+                var user = _db.Login_Pages.FirstOrDefault(Queryable => Queryable.ID == ID);
                 var hashed_password = Utils.DefaultHashpassword();
                 user.Password = hashed_password;
                 _db.SaveChanges();
@@ -63,7 +63,7 @@ namespace CouncilGamingClub
                 var ID = (int)gvUserList.SelectedRows[0].Cells["id"].Value;
 
                 //query Database 
-                var user = _db.Login_Page.FirstOrDefault(Queryable => Queryable.ID == ID);
+                var user = _db.Login_Pages.FirstOrDefault(Queryable => Queryable.ID == ID);
                 
                 user.isActive = user.isActive == true ? false : true;
                 _db.SaveChanges();
@@ -83,7 +83,7 @@ namespace CouncilGamingClub
         }
         public void PopulateGrid()
         {
-            var Cgc = _db.Login_Page
+            var Cgc = _db.Login_Pages
             .Select(q => new
             {
                q.ID ,

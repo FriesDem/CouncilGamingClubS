@@ -21,7 +21,7 @@ namespace CouncilGamingClub
             InitializeComponent();
             cgcDB = new CGCAppDatabaseEntities();
             customerInfo = new CustomerInfo();
-           // invTable = new Inventory_Table();
+           
         }
        
         private void CHomeButton_Click(object sender, EventArgs e)
@@ -98,10 +98,8 @@ namespace CouncilGamingClub
                 MessageBox.Show(ex.Message);
             }
         }
-
-       
-
-        private void btnViewData_Click_1(object sender, EventArgs e)
+                    
+        private void viewCurrentDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var viewData = new frmExistingData();
             viewData.MdiParent = MainInterface.ActiveForm;
