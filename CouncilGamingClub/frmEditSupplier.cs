@@ -29,8 +29,7 @@ namespace CouncilGamingClub
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            var ID = int.Parse(lblID.Text);
-            var supplier = cgcDB.SupplierTables.FirstOrDefault(dt => dt.ID == ID);
+            
 
             supplier.SupplierID = tbSupplierID.Text;
             supplier.SupplierName = tbSupplierName.Text;
@@ -39,6 +38,8 @@ namespace CouncilGamingClub
             cgcDB.SupplierTables.Add(supplier);
             cgcDB.SaveChanges();
             MessageBox.Show("Your Supplier Info has been saved successfully");
+            this.Close();
+            
         }
     }
 }

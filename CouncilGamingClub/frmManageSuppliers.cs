@@ -54,10 +54,11 @@ namespace CouncilGamingClub
 
                 //query Database 
                 var supplier = cgcDB.SupplierTables.FirstOrDefault(dt => dt.ID == ID);
-
+                
                 var existingInfo = new frmEditSupplier(supplier);
                 existingInfo.MdiParent = MainInterface.ActiveForm;
                 existingInfo.Show();
+                
             }
 
             catch (IndexOutOfRangeException)
