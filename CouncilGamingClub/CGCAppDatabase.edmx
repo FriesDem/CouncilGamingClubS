@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CGCAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CGCAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CustomerInfo">
           <Key>
             <PropertyRef Name="ID" />
@@ -20,9 +20,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ItemID" Type="nchar" MaxLength="10" />
-          <Property Name="ItemName" Type="nchar" MaxLength="15" />
-          <Property Name="Type Of Item" Type="nchar" MaxLength="20" />
+          <Property Name="ItemID" Type="nchar" MaxLength="50" />
+          <Property Name="ItemName" Type="nchar" MaxLength="50" />
+          <Property Name="Type Of Item" Type="nchar" MaxLength="50" />
           <Property Name="Amount" Type="int" />
           <Property Name="SupplierID" Type="nchar" MaxLength="10" />
         </EntityType>
@@ -127,7 +127,8 @@
             <End Role="UserRoles" EntitySet="UserRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CGCAppDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -146,9 +147,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ItemID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ItemName" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="Type_Of_Item" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="ItemID" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Type_Of_Item" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="SupplierTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="InventoryTable" ToRole="SupplierTable" />
@@ -168,11 +169,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="TotalCost" Type="Int32" />
           <Property Name="Cust_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="OrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -301,8 +302,8 @@
           <EntitySetMapping Name="OrdersTables">
             <EntityTypeMapping TypeName="CGCAppDatabaseModel.OrdersTable">
               <MappingFragment StoreEntitySet="OrdersTable">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="Product_Name" ColumnName="Product Name" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />

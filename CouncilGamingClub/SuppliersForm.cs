@@ -34,11 +34,15 @@ namespace CouncilGamingClub
             try
             {
 
-                supplierTable.SupplierID = tbSupplierID.Text;
-                supplierTable.SupplierName = tbSupplierName.Text;
-                supplierTable.Address = tbAddress.Text;
+                string suppid = tbSupplierID.Text;
+                string suppname = tbSupplierName.Text;
+                string address = tbAddress.Text;
 
-                
+                supplierTable.SupplierID = suppid;
+                supplierTable.SupplierName = suppname;
+                supplierTable.Address = address;
+
+                cgcDB.SupplierTables.Add(supplierTable);
                 cgcDB.SaveChanges();
                 MessageBox.Show("Nice. Your Supplier Record Has Been Added.");
 
