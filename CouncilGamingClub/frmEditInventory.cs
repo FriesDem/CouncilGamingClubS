@@ -15,6 +15,7 @@ namespace CouncilGamingClub
         private readonly InventoryTable inventory = new InventoryTable();
         private readonly CGCAppDatabaseEntities cgcDB;
 
+        public int ID { get; private set; }
 
         public frmEditInventory(InventoryTable inventory)
         {
@@ -46,6 +47,7 @@ namespace CouncilGamingClub
         {
             try
             {
+                var inventory = cgcDB.InventoryTables.FirstOrDefault(dt => dt.ID == ID);
                 inventory.ItemID = tbItemID.Text;
                 inventory.ItemName = tbItemName.Text;
                 inventory.Amount = int.Parse(tbAmount.Text);

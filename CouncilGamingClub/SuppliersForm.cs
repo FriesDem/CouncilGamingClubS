@@ -12,11 +12,13 @@ namespace CouncilGamingClub
 {
     public partial class SuppliersForm : Form
     {
-        private readonly CGCAppDatabaseEntities cgcDB = new CGCAppDatabaseEntities();
-        private readonly SupplierTable supplierTable = new SupplierTable();
+        private readonly CGCAppDatabaseEntities cgcDB;
+        private readonly SupplierTable supplierTable;
         public SuppliersForm()
         {
             InitializeComponent();
+            cgcDB = new CGCAppDatabaseEntities();
+            supplierTable = new SupplierTable();
         }
 
         private void SHomeButton_Click(object sender, EventArgs e)

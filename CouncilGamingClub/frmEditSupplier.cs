@@ -29,6 +29,9 @@ namespace CouncilGamingClub
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
+            var ID = int.Parse(lblID.Text);
+            var supplier = cgcDB.SupplierTables.FirstOrDefault(dt => dt.ID == ID);
+
             supplier.SupplierID = tbSupplierID.Text;
             supplier.SupplierName = tbSupplierName.Text;
             supplier.Address = tbSupplierAddress.Text;

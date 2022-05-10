@@ -89,7 +89,7 @@ namespace CouncilGamingClub
                 cgcDB.CustomerInfoes.Add(customerInfo);
                 cgcDB.SaveChanges();
 
-
+                MessageBox.Show("The Customer's Data has been logged successfully");
 
             }
             catch (Exception ex)
