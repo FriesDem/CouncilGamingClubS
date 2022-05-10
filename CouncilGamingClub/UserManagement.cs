@@ -108,8 +108,10 @@ namespace CouncilGamingClub
 
         private void btnreturn_Click(object sender, EventArgs e)
         {
+
             this.Close();
-            MainPage main = new MainPage();
+            var main = new MainPage();
+            main.MdiParent = MainInterface.ActiveForm;
             main.Show();
         }
     }

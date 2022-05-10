@@ -33,24 +33,27 @@
             this.btnEditSupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.gvSuppliers = new System.Windows.Forms.DataGridView();
+            this.Return = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
             // lblManageSuppliers
             // 
             this.lblManageSuppliers.AutoSize = true;
-            this.lblManageSuppliers.Font = new System.Drawing.Font("Dosis", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageSuppliers.Location = new System.Drawing.Point(258, 54);
+            this.lblManageSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageSuppliers.Location = new System.Drawing.Point(344, 66);
+            this.lblManageSuppliers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManageSuppliers.Name = "lblManageSuppliers";
-            this.lblManageSuppliers.Size = new System.Drawing.Size(281, 47);
+            this.lblManageSuppliers.Size = new System.Drawing.Size(415, 54);
             this.lblManageSuppliers.TabIndex = 12;
             this.lblManageSuppliers.Text = "Manage Suppliers";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(451, 351);
+            this.btnDelete.Location = new System.Drawing.Point(601, 432);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 46);
+            this.btnDelete.Size = new System.Drawing.Size(133, 57);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete Supplier";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -58,9 +61,10 @@
             // 
             // btnEditSupplier
             // 
-            this.btnEditSupplier.Location = new System.Drawing.Point(345, 351);
+            this.btnEditSupplier.Location = new System.Drawing.Point(460, 432);
+            this.btnEditSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditSupplier.Name = "btnEditSupplier";
-            this.btnEditSupplier.Size = new System.Drawing.Size(100, 46);
+            this.btnEditSupplier.Size = new System.Drawing.Size(133, 57);
             this.btnEditSupplier.TabIndex = 10;
             this.btnEditSupplier.Text = "Edit Supplier";
             this.btnEditSupplier.UseVisualStyleBackColor = true;
@@ -68,9 +72,10 @@
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(240, 351);
+            this.btnAddSupplier.Location = new System.Drawing.Point(320, 432);
+            this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(100, 46);
+            this.btnAddSupplier.Size = new System.Drawing.Size(133, 57);
             this.btnAddSupplier.TabIndex = 11;
             this.btnAddSupplier.Text = "Add Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
@@ -79,21 +84,35 @@
             // gvSuppliers
             // 
             this.gvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSuppliers.Location = new System.Drawing.Point(141, 104);
+            this.gvSuppliers.Location = new System.Drawing.Point(188, 128);
+            this.gvSuppliers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gvSuppliers.Name = "gvSuppliers";
-            this.gvSuppliers.Size = new System.Drawing.Size(519, 224);
+            this.gvSuppliers.RowHeadersWidth = 51;
+            this.gvSuppliers.Size = new System.Drawing.Size(692, 276);
             this.gvSuppliers.TabIndex = 8;
+            // 
+            // Return
+            // 
+            this.Return.Location = new System.Drawing.Point(3, 2);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(75, 23);
+            this.Return.TabIndex = 13;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // frmManageSuppliers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.lblManageSuppliers);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEditSupplier);
             this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.gvSuppliers);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmManageSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Suppliers";
@@ -110,5 +129,6 @@
         private System.Windows.Forms.Button btnEditSupplier;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.DataGridView gvSuppliers;
+        private System.Windows.Forms.Button Return;
     }
 }

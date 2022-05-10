@@ -119,6 +119,12 @@ namespace CouncilGamingClub
             MessageBox.Show("Select a record, then select an optin below");
         }
 
-       
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var ord = new OrdersWindow();
+            ord.MdiParent = MainInterface.ActiveForm;
+            ord.Show();
+        }
     }
 }

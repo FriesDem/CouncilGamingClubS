@@ -55,6 +55,13 @@ namespace CouncilGamingClub
             }
         }
 
-       
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Close();
+            var ret = new CustomerInfoPage();
+            ret.MdiParent = MainInterface.ActiveForm;
+            ret.Show();
+        }
     }
 }

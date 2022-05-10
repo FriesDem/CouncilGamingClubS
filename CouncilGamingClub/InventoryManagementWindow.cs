@@ -124,6 +124,14 @@ namespace CouncilGamingClub
             }
             FillTable();
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var ims = new Inventory();
+            ims.MdiParent = MainInterface.ActiveForm;
+            ims.Show();
+        }
     }
 
        

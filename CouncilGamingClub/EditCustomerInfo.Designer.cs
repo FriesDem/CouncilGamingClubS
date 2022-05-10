@@ -41,6 +41,7 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnCancelChanges = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
+            this.Return = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtAddress, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(95, 82);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22223F));
@@ -72,7 +73,7 @@
             // txtUniqueID
             // 
             this.txtUniqueID.Location = new System.Drawing.Point(436, 4);
-            this.txtUniqueID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUniqueID.Margin = new System.Windows.Forms.Padding(4);
             this.txtUniqueID.Name = "txtUniqueID";
             this.txtUniqueID.Size = new System.Drawing.Size(156, 22);
             this.txtUniqueID.TabIndex = 1;
@@ -90,7 +91,7 @@
             // txtFName
             // 
             this.txtFName.Location = new System.Drawing.Point(436, 110);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(156, 22);
             this.txtFName.TabIndex = 1;
@@ -98,7 +99,7 @@
             // txtLName
             // 
             this.txtLName.Location = new System.Drawing.Point(436, 216);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(156, 22);
             this.txtLName.TabIndex = 1;
@@ -136,7 +137,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(436, 322);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(275, 64);
@@ -156,7 +157,7 @@
             // btnSaveChanges
             // 
             this.btnSaveChanges.Location = new System.Drawing.Point(219, 567);
-            this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(176, 47);
             this.btnSaveChanges.TabIndex = 1;
@@ -167,7 +168,7 @@
             // btnCancelChanges
             // 
             this.btnCancelChanges.Location = new System.Drawing.Point(675, 567);
-            this.btnCancelChanges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelChanges.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelChanges.Name = "btnCancelChanges";
             this.btnCancelChanges.Size = new System.Drawing.Size(180, 47);
             this.btnCancelChanges.TabIndex = 1;
@@ -185,17 +186,28 @@
             this.lblID.Text = "ID";
             this.lblID.Visible = false;
             // 
+            // Return
+            // 
+            this.Return.Location = new System.Drawing.Point(-1, 2);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(75, 23);
+            this.Return.TabIndex = 2;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
+            // 
             // frmEditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 663);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.btnCancelChanges);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Customer Info";
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.Button btnCancelChanges;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button Return;
     }
 }

@@ -71,5 +71,13 @@ namespace CouncilGamingClub
                 MessageBox.Show("An Error Has Occured");
             }
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var main = new UserManagement();
+            main.MdiParent = MainInterface.ActiveForm;
+            main.Show();
+        }
     }
 }

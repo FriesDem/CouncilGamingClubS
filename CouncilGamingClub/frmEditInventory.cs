@@ -72,5 +72,14 @@ namespace CouncilGamingClub
             MessageBox.Show("The Process will be Terminated");
             this.Close();
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Close();
+            var inv = new Inventory();
+            inv.MdiParent = MainInterface.ActiveForm;
+            inv.Show();
+        }
     }
 }

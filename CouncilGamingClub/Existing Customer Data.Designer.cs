@@ -32,6 +32,7 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.Return = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.gvCustInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvCustInfo.Location = new System.Drawing.Point(140, 130);
-            this.gvCustInfo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gvCustInfo.Margin = new System.Windows.Forms.Padding(5);
             this.gvCustInfo.Name = "gvCustInfo";
             this.gvCustInfo.RowHeadersWidth = 51;
             this.gvCustInfo.Size = new System.Drawing.Size(611, 342);
@@ -48,7 +49,7 @@
             // btnAddCustomer
             // 
             this.btnAddCustomer.Location = new System.Drawing.Point(225, 594);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnAddCustomer.TabIndex = 1;
@@ -59,7 +60,7 @@
             // btnEditCustomer
             // 
             this.btnEditCustomer.Location = new System.Drawing.Point(377, 594);
-            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(137, 64);
             this.btnEditCustomer.TabIndex = 1;
@@ -70,7 +71,7 @@
             // btnDeleteCustomer
             // 
             this.btnDeleteCustomer.Location = new System.Drawing.Point(523, 594);
-            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(148, 64);
             this.btnDeleteCustomer.TabIndex = 1;
@@ -78,17 +79,28 @@
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
+            // Return
+            // 
+            this.Return.Location = new System.Drawing.Point(0, 1);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(75, 23);
+            this.Return.TabIndex = 2;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
+            // 
             // frmExistingData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(977, 688);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.gvCustInfo);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmExistingData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Existing Customer Data";
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.Button Return;
     }
 }

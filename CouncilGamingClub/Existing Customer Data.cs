@@ -134,5 +134,13 @@ namespace CouncilGamingClub
         {
             ShowMessage();
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var cust = new CustomerInfoPage();
+            cust.MdiParent = MainInterface.ActiveForm;
+            cust.Show();
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.cbrole = new System.Windows.Forms.ComboBox();
             this.btnsubmit = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.Return = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,11 +123,22 @@
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
+            // Return
+            // 
+            this.Return.Location = new System.Drawing.Point(-1, 0);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(75, 23);
+            this.Return.TabIndex = 15;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 392);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnsubmit);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.ComboBox cbrole;
         private System.Windows.Forms.Button btnsubmit;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Button Return;
     }
 }

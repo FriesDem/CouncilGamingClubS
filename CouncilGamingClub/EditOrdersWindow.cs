@@ -78,6 +78,13 @@ namespace CouncilGamingClub
             this.Close();
         }
 
-        
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Close();
+            var order = new ManageOrders();
+            order.MdiParent = MainInterface.ActiveForm;
+            order.Show();
+        }
     }
 }

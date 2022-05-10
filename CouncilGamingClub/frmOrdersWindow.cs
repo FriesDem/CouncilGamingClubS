@@ -60,5 +60,21 @@ namespace CouncilGamingClub
             manageOrder.MdiParent = MainInterface.ActiveForm;
             manageOrder.Show();
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var main = new MainPage();
+            main.MdiParent = MainInterface.ActiveForm;
+            main.Show();
+        }
+
+        private void CHomeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var main = new MainPage();
+            main.MdiParent = MainInterface.ActiveForm;
+            main.Show();
+        }
     }
 }

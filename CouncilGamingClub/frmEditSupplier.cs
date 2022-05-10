@@ -41,5 +41,14 @@ namespace CouncilGamingClub
             this.Close();
             
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Close();
+            var supp = new SuppliersForm();
+            supp.MdiParent = MainInterface.ActiveForm;
+            supp.Show();
+        }
     }
 }

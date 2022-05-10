@@ -34,7 +34,6 @@
             this.gvUserList = new System.Windows.Forms.DataGridView();
             this.btnrefresh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnreturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +82,7 @@
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(4, 61);
+            this.btnrefresh.Location = new System.Drawing.Point(4, 3);
             this.btnrefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(118, 42);
@@ -102,24 +101,12 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Manage Users";
             // 
-            // btnreturn
-            // 
-            this.btnreturn.Location = new System.Drawing.Point(4, 13);
-            this.btnreturn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnreturn.Name = "btnreturn";
-            this.btnreturn.Size = new System.Drawing.Size(100, 38);
-            this.btnreturn.TabIndex = 11;
-            this.btnreturn.Text = "Return";
-            this.btnreturn.UseVisualStyleBackColor = true;
-            this.btnreturn.Click += new System.EventHandler(this.btnreturn_Click);
-            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(974, 572);
-            this.Controls.Add(this.btnreturn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.btnDeactivateStaff);
@@ -144,6 +131,5 @@
         private System.Windows.Forms.DataGridView gvUserList;
         private System.Windows.Forms.Button btnrefresh;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnreturn;
     }
 }
