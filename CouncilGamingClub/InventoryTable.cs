@@ -20,7 +20,5 @@ namespace CouncilGamingClub
         public string Type_Of_Item { get; set; }
         public Nullable<int> Amount { get; set; }
         public string SupplierID { get; set; }
-    
-        public virtual SupplierTable SupplierTable { get; set; }
     }
 }

@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a1f9f4707bdb454cb2f9d2afb742a171" Name="Diagram1">
-        <EntityTypeShape EntityType="CGCAppDatabaseModel.CustomerInfo" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CGCAppDatabaseModel.InventoryTable" Width="1.5" PointX="2.75" PointY="4" IsExpanded="true" />
+      <Diagram DiagramId="d74abcf297a84f5f982dca60b21599f0" Name="Diagram1">
+        <EntityTypeShape EntityType="CGCAppDatabaseModel.CustomerInfo" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CGCAppDatabaseModel.InventoryTable" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CGCAppDatabaseModel.Login_Page" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CGCAppDatabaseModel.OrdersTable" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CGCAppDatabaseModel.OrdersTable" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CGCAppDatabaseModel.Role" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CGCAppDatabaseModel.SupplierTable" Width="1.5" PointX="5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CGCAppDatabaseModel.SupplierTable" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CGCAppDatabaseModel.UserRole" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="CGCAppDatabaseModel.FK_Supplier_Table_Inventory_Table" ManuallyRouted="false" />
         <AssociationConnector Association="CGCAppDatabaseModel.FK_UserRoles_Login_Page" ManuallyRouted="false" />
         <AssociationConnector Association="CGCAppDatabaseModel.FK_UserRoles_Roles" ManuallyRouted="false" />
       </Diagram>

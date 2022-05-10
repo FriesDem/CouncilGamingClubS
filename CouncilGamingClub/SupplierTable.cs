@@ -18,7 +18,5 @@ namespace CouncilGamingClub
         public string SupplierName { get; set; }
         public string SupplierID { get; set; }
         public string Address { get; set; }
-    
-        public virtual InventoryTable InventoryTable { get; set; }
     }
 }

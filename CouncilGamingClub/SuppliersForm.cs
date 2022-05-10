@@ -12,11 +12,13 @@ namespace CouncilGamingClub
 {
     public partial class SuppliersForm : Form
     {
-        private readonly CGCAppDatabaseEntities cgcDB = new CGCAppDatabaseEntities();
-        private readonly SupplierTable supplierTable = new SupplierTable();
+        private readonly CGCAppDatabaseEntities cgcDB;
+        private readonly SupplierTable supplierTable;
         public SuppliersForm()
         {
             InitializeComponent();
+            cgcDB = new CGCAppDatabaseEntities();
+            supplierTable = new SupplierTable();
         }
 
         private void SHomeButton_Click(object sender, EventArgs e)
@@ -33,12 +35,17 @@ namespace CouncilGamingClub
             
             try
             {
-
-                supplierTable.SupplierID = tbSupplierID.Text;
-                supplierTable.SupplierName = tbSupplierName.Text;
-                supplierTable.Address = tbAddress.Text;
-
                 
+                string supplierID = tbSupplierID.Text;
+                string supplierName = tbSupplierName.Text;
+                string supplierAddress = tbAddress.Text;
+                
+
+                supplierTable.SupplierID = supplierID;
+                supplierTable.SupplierName = supplierName;
+                supplierTable.Address = supplierAddress;
+
+                cgcDB.SupplierTables.Add(supplierTable);
                 cgcDB.SaveChanges();
                 MessageBox.Show("Nice. Your Supplier Record Has Been Added.");
 
