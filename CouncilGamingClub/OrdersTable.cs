@@ -15,10 +15,10 @@ namespace CouncilGamingClub
     public partial class OrdersTable
     {
         public int ID { get; set; }
+        public string OrderID { get; set; }
         public string Product_Name { get; set; }
         public Nullable<int> Amount { get; set; }
         public Nullable<int> TotalCost { get; set; }
         public string Cust_ID { get; set; }
-        public string OrderID { get; set; }
     }
 }

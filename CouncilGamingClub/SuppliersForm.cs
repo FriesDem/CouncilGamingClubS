@@ -34,13 +34,14 @@ namespace CouncilGamingClub
             try
             {
 
-                string suppid = tbSupplierID.Text;
-                string suppname = tbSupplierName.Text;
-                string address = tbAddress.Text;
+                string supplierID = tbSupplierID.Text;
+                string supplierName = tbSupplierName.Text;
+                string supplierAddress = tbAddress.Text;
 
-                supplierTable.SupplierID = suppid;
-                supplierTable.SupplierName = suppname;
-                supplierTable.Address = address;
+
+                supplierTable.SupplierID = supplierID;
+                supplierTable.SupplierName = supplierName;
+                supplierTable.Address = supplierAddress;
 
                 cgcDB.SupplierTables.Add(supplierTable);
                 cgcDB.SaveChanges();

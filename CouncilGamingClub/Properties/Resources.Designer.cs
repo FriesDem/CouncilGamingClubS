@@ -63,6 +63,36 @@ namespace CouncilGamingClub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_home_page_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-home-page-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sign_out_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sign-out-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_test_account_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-test-account-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info_icon_edit_ {
             get {
                 object obj = ResourceManager.GetObject("info-icon(edit)", resourceCulture);
@@ -76,6 +106,16 @@ namespace CouncilGamingClub.Properties {
         internal static System.Drawing.Bitmap info_icon_edit_1 {
             get {
                 object obj = ResourceManager.GetObject("info-icon(edit)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewCopy {
+            get {
+                object obj = ResourceManager.GetObject("NewCopy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +166,36 @@ namespace CouncilGamingClub.Properties {
         internal static System.Drawing.Bitmap user_icon_esit_ {
             get {
                 object obj = ResourceManager.GetObject("user-icon(esit)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_05_09_at_8_55_46_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-05-09 at 8.55.46 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_05_09_at_8_55_46_PM__2_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-05-09 at 8.55.46 PM (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_05_09_at_8_551 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-05-09 at 8.551", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

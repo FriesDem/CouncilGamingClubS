@@ -38,19 +38,19 @@
             // gvCustInfo
             // 
             this.gvCustInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCustInfo.Location = new System.Drawing.Point(4, 86);
-            this.gvCustInfo.Location = new System.Drawing.Point(105, 106);
-            this.gvCustInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.gvCustInfo.Location = new System.Drawing.Point(140, 130);
+            this.gvCustInfo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.gvCustInfo.Name = "gvCustInfo";
             this.gvCustInfo.RowHeadersWidth = 51;
-            this.gvCustInfo.Size = new System.Drawing.Size(458, 278);
+            this.gvCustInfo.Size = new System.Drawing.Size(611, 342);
             this.gvCustInfo.TabIndex = 0;
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(169, 483);
+            this.btnAddCustomer.Location = new System.Drawing.Point(225, 594);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(113, 52);
+            this.btnAddCustomer.Size = new System.Drawing.Size(151, 64);
             this.btnAddCustomer.TabIndex = 1;
             this.btnAddCustomer.Text = "Add Customer ";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
@@ -58,15 +58,10 @@
             // 
             // btnEditCustomer
             // 
-<<<<<<< HEAD
-            this.btnEditCustomer.Location = new System.Drawing.Point(499, 483);
-=======
-            this.btnEditCustomer.Location = new System.Drawing.Point(324, 386);
->>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
-            this.btnEditCustomer.Location = new System.Drawing.Point(283, 483);
+            this.btnEditCustomer.Location = new System.Drawing.Point(377, 594);
+            this.btnEditCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(151, 64);
-            this.btnEditCustomer.Size = new System.Drawing.Size(103, 52);
+            this.btnEditCustomer.Size = new System.Drawing.Size(137, 64);
             this.btnEditCustomer.TabIndex = 1;
             this.btnEditCustomer.Text = "Edit Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
@@ -74,15 +69,10 @@
             // 
             // btnDeleteCustomer
             // 
-<<<<<<< HEAD
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(855, 483);
-=======
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(467, 386);
->>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(392, 483);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(523, 594);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(151, 64);
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(111, 52);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(148, 64);
             this.btnDeleteCustomer.TabIndex = 1;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
@@ -90,28 +80,23 @@
             // 
             // frmExistingData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1095, 559);
-=======
-            this.ClientSize = new System.Drawing.Size(800, 450);
->>>>>>> b8fa47d4527eea2d74d6b9434ed822730a95bd0e
-            this.ClientSize = new System.Drawing.Size(733, 559);
+            this.ClientSize = new System.Drawing.Size(977, 688);
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.gvCustInfo);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmExistingData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Existing Customer Data";
             this.Activated += new System.EventHandler(this.frmExistingData_Activated);
             this.Load += new System.EventHandler(this.frmExistingData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvCustInfo)).EndInit();
             this.ResumeLayout(false);
 
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
         }
 
         #endregion

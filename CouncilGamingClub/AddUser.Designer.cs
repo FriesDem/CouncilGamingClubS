@@ -132,6 +132,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add User";
             this.Load += new System.EventHandler(this.AddUser_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

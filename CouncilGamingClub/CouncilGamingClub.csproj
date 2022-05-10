@@ -331,6 +331,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\WhatsApp Image 2022-05-09 at 8.55.46 PM %282%29.jpeg" />
+    <None Include="Resources\NewCopy.jpeg" />
+    <None Include="Resources\WhatsApp Image 2022-05-09 at 8.55.46 PM1.jpeg" />
+    <None Include="Resources\icons8-test-account-100.png" />
+    <None Include="Resources\icons8-home-page-96.png" />
+    <None Include="Resources\icons8-sign-out-100.png" />
+    <None Include="Resources\WhatsApp Image 2022-05-09 at 8.55.46 PM.jpeg" />
     <None Include="Resources\info-icon%28edit%291.png" />
     <None Include="Resources\user-icon%28esit%29.png" />
     <None Include="Resources\info-icon%28edit%29.png" />

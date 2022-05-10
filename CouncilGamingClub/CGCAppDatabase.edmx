@@ -60,7 +60,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SupplierName" Type="nchar" MaxLength="10" />
           <Property Name="SupplierID" Type="nchar" MaxLength="10" />
-          <Property Name="Address" Type="nchar" MaxLength="10" />
+          <Property Name="Address" Type="text" />
         </EntityType>
         <EntityType Name="UserRoles">
           <Key>
@@ -70,18 +70,6 @@
           <Property Name="userid" Type="int" />
           <Property Name="roleid" Type="int" />
         </EntityType>
-        <Association Name="FK_Supplier Table_Inventory Table">
-          <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
-          <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="InventoryTable">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="SupplierTable">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserRoles_Login Page">
           <End Role="Login Page" Type="Self.Login Page" Multiplicity="0..1" />
           <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
@@ -114,10 +102,6 @@
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SupplierTable" EntityType="Self.SupplierTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Supplier Table_Inventory Table" Association="Self.FK_Supplier Table_Inventory Table">
-            <End Role="InventoryTable" EntitySet="InventoryTable" />
-            <End Role="SupplierTable" EntitySet="SupplierTable" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserRoles_Login Page" Association="Self.FK_UserRoles_Login Page">
             <End Role="Login Page" EntitySet="Login Page" />
             <End Role="UserRoles" EntitySet="UserRoles" />
@@ -152,7 +136,6 @@
           <Property Name="Type_Of_Item" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="SupplierTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="InventoryTable" ToRole="SupplierTable" />
         </EntityType>
         <EntityType Name="Login_Page">
           <Key>
@@ -190,8 +173,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SupplierName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="InventoryTable" Relationship="Self.FK_Supplier_Table_Inventory_Table" FromRole="SupplierTable" ToRole="InventoryTable" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -203,18 +185,6 @@
           <NavigationProperty Name="Login_Page" Relationship="Self.FK_UserRoles_Login_Page" FromRole="UserRoles" ToRole="Login_Page" />
           <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles" FromRole="UserRoles" ToRole="Roles" />
         </EntityType>
-        <Association Name="FK_Supplier_Table_Inventory_Table">
-          <End Role="InventoryTable" Type="Self.InventoryTable" Multiplicity="1" />
-          <End Role="SupplierTable" Type="Self.SupplierTable" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="InventoryTable">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="SupplierTable">
-              <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserRoles_Login_Page">
           <End Role="Login_Page" Type="Self.Login_Page" Multiplicity="0..1" />
           <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
@@ -247,10 +217,6 @@
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="SupplierTables" EntityType="Self.SupplierTable" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
-          <AssociationSet Name="FK_Supplier_Table_Inventory_Table" Association="Self.FK_Supplier_Table_Inventory_Table">
-            <End Role="InventoryTable" EntitySet="InventoryTables" />
-            <End Role="SupplierTable" EntitySet="SupplierTables" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserRoles_Login_Page" Association="Self.FK_UserRoles_Login_Page">
             <End Role="Login_Page" EntitySet="Login_Pages" />
             <End Role="UserRoles" EntitySet="UserRoles" />

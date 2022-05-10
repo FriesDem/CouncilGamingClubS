@@ -91,6 +91,7 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.btnReset);
             this.Name = "ResetPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPassword";
             this.ResumeLayout(false);
             this.PerformLayout();
